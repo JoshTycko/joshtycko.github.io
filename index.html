@@ -53,21 +53,6 @@
       and understands the stakes.
     </p>
 
-    <div class="hero__meta">
-      <!-- REPLACE: real address and profile URLs. Leave as # until you have them. -->
-      <a class="button" href="mailto:alex@example.edu">Email</a>
-      <a class="arrow" href="#">Google Scholar</a>
-      <a class="arrow" href="#">X</a>
-      <!-- REPLACE: your ORCID URL, e.g. https://orcid.org/0000-0000-0000-0000 -->
-      <a class="icon-link" href="#" aria-label="ORCID profile" title="ORCID">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <circle cx="12" cy="12" r="12"/>
-          <text x="12" y="16.1" text-anchor="middle"
-                font-family="Inter, system-ui, sans-serif" font-size="10.5"
-                font-weight="600" fill="var(--paper)">iD</text>
-        </svg>
-      </a>
-    </div>
   </header>
 
   <!-- ============ ABOUT ============ -->
@@ -208,11 +193,44 @@
         Department of Physics &middot; Example University
       </p>
     </div>
-    <ul class="footer__links">
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="mailto:alex@example.edu">Email</a></li>
-    </ul>
+    <div class="footer__meta">
+      <ul class="footer__links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="publications.html">Publications</a></li>
+      </ul>
+      <!-- REPLACE: real address and profile URLs. Leave as # until you have them. -->
+      <div class="footer__icons">
+        <a class="icon-link" href="mailto:alex@example.edu" aria-label="Email" title="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5.5" width="18" height="13" rx="1.5"/>
+            <path d="M4 7.2l8 5.8 8-5.8"/>
+          </svg>
+        </a>
+        <a class="icon-link" href="#" aria-label="Google Scholar" title="Google Scholar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 5L2.8 9.6l9.2 4.6 9.2-4.6L12 5z"/>
+            <path d="M6.8 12.2v3c0 1.5 2.3 2.9 5.2 2.9s5.2-1.4 5.2-2.9v-3"/>
+            <path d="M21.2 9.6v4.5"/>
+          </svg>
+        </a>
+        <a class="icon-link" href="#" aria-label="X" title="X">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+        <!-- REPLACE: your ORCID URL, e.g. https://orcid.org/0000-0000-0000-0000 -->
+        <a class="icon-link" href="#" aria-label="ORCID" title="ORCID">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <circle cx="12" cy="12" r="12"/>
+            <text x="12" y="16.1" text-anchor="middle"
+                  font-family="Inter, system-ui, sans-serif" font-size="10.5"
+                  font-weight="600" fill="var(--paper)">iD</text>
+          </svg>
+        </a>
+      </div>
+    </div>
   </div>
 </footer>
 

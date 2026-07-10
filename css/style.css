@@ -635,6 +635,25 @@ a:focus-visible {
   color: var(--ink-mute);
 }
 
+/* Right-hand footer column: text links above a row of profile icons. */
+.footer__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.05rem;
+}
+
+.footer__icons {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+@media (min-width: 40rem) {
+  .footer__meta {
+    align-items: flex-end;
+  }
+}
+
 /* ---------- Utilities ---------- */
 
 .stack > * + * {
