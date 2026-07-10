@@ -41,8 +41,8 @@
   --ink: #1b1a17;
   --ink-soft: #4a473f;
   --ink-mute: #6f6b61;
-  --accent: #16615c;
-  --accent-soft: #2a7a74;
+  --accent: #a4610f;
+  --accent-soft: #c07d2a;
   --rule: rgba(27, 26, 23, 0.13);
   --rule-strong: rgba(27, 26, 23, 0.28);
 
@@ -66,8 +66,8 @@
     --ink: #eae7dd;
     --ink-soft: #b6b1a4;
     --ink-mute: #8b8679;
-    --accent: #7ec4bb;
-    --accent-soft: #a2d8d1;
+    --accent: #dca35c;
+    --accent-soft: #e8bd83;
     --rule: rgba(234, 231, 221, 0.16);
     --rule-strong: rgba(234, 231, 221, 0.34);
   }
@@ -321,9 +321,16 @@ a:focus-visible {
   max-width: 15ch;
 }
 
+/* Instead of an italic colored word, the key phrase is marked with a
+   highlighter swipe — a nod to picking a hit out of a screen. */
 .hero h1 .accent {
-  font-style: italic;
-  color: var(--accent);
+  background: linear-gradient(
+    transparent 58%,
+    color-mix(in srgb, var(--accent) 32%, transparent) 58%
+  );
+  padding-inline: 0.06em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .hero .lede {
