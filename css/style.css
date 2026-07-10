@@ -646,3 +646,39 @@ a:focus-visible {
   margin-inline: auto;
   text-align: center;
 }
+
+/* Small icon-only link (ORCID). Color-only hover, like the arrows. */
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent);
+  transition: color 140ms ease;
+}
+
+.icon-link:hover {
+  color: var(--accent-soft);
+}
+
+/* ---------- Cross-page view transitions ----------
+   Progressive enhancement: pages soft-crossfade into each other while the
+   brand and the active nav underline stay anchored. Browsers without
+   support (or readers preferring reduced motion) get instant navigation. */
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 220ms;
+  }
+
+  .nav__brand {
+    view-transition-name: nav-brand;
+  }
+
+  .nav__links a[aria-current='page'] {
+    view-transition-name: active-nav-link;
+  }
+}
