@@ -666,16 +666,50 @@ a:focus-visible {
   text-align: center;
 }
 
-/* Drop cap on the opening paragraph — a printed-monograph touch.
-   Float-based so it renders in every browser, including Firefox. */
-.prose--dropcap > p:first-of-type::first-letter {
-  float: left;
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 3.3em;
-  line-height: 0.78;
-  padding: 0.05em 0.12em 0 0;
-  color: var(--accent);
+/* ---------- Hero layout + screen-readout grid ----------
+   On desktop the hero text sits beside a faint dot-matrix that evokes an
+   arrayed / pooled screen; hovering lights the "wells" in accent. Decorative
+   and desktop-only, so mobile stays clean and nothing depends on it. */
+
+@media (min-width: 56rem) {
+  .hero__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 3.5rem;
+  }
+}
+
+.hero__grid {
+  display: none;
+}
+
+@media (min-width: 56rem) {
+  .hero__grid {
+    display: grid;
+    grid-template-columns: repeat(8, 20px);
+    grid-auto-rows: 20px;
+    justify-content: end;
+  }
+  .hero__grid i {
+    display: block;
+    position: relative;
+  }
+  /* The dot is a centered pseudo-element; the full cell is the hover target,
+     so the pointer glides across a continuous surface with no dead gaps. */
+  .hero__grid i::before {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border-radius: 50%;
+    background: var(--rule-strong);
+    transition: background 750ms ease, transform 750ms ease;
+  }
+  .hero__grid i:hover::before {
+    background: var(--accent);
+    transform: scale(1.55);
+    transition: none;
+  }
 }
 
 /* Small icon-only link (ORCID). Color-only hover, like the arrows. */

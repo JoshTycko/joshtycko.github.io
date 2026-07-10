@@ -4,20 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- REPLACE: title + description are what search engines show. Keep the
-     description under ~155 characters. -->
-<title>Alex Rivera</title>
-<meta name="description" content="Alex Rivera is a postdoctoral researcher in the Department of Physics at Example University.">
+<title>Josh Tycko</title>
+<meta name="description" content="Josh Tycko is a postdoctoral fellow at Harvard Medical School developing high-throughput technologies to measure and manipulate human gene regulation.">
 
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/newsreader-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 
-<!-- REPLACE: set this to the real domain once DNS is pointed. -->
-<link rel="canonical" href="https://example.com/">
-<meta property="og:title" content="Alex Rivera">
-<meta property="og:description" content="Postdoctoral researcher, Department of Physics, Example University.">
+<!-- REPLACE: point this at joshtycko.com once DNS is moved off Owlstown. -->
+<link rel="canonical" href="https://joshtycko.github.io/">
+<meta property="og:title" content="Josh Tycko">
+<meta property="og:description" content="Postdoctoral fellow at Harvard Medical School. High-throughput tools to measure and manipulate human gene regulation.">
 <meta property="og:type" content="profile">
 </head>
 <body>
@@ -26,7 +24,7 @@
 
 <nav class="nav">
   <div class="shell nav__inner">
-    <a class="nav__brand" href="index.html">Alex Rivera</a>
+    <a class="nav__brand" href="index.html">Josh Tycko</a>
     <ul class="nav__links">
       <li><a href="index.html" aria-current="page">About</a></li>
       <li><a href="index.html#research">Research</a></li>
@@ -39,46 +37,61 @@
 
   <!-- ============ HERO ============ -->
   <header class="hero shell">
-    <!-- REPLACE: title and institution. -->
-    <p class="eyebrow">Postdoctoral Researcher &middot; Department of Physics</p>
+    <div class="hero__layout">
+      <div class="hero__text">
+        <p class="eyebrow">Postdoctoral Fellow &middot; Harvard Medical School</p>
 
-    <!-- REPLACE: one sentence, the thesis of the work. The italic accent word
-         should be the single most important noun in it. -->
-    <h1>Your research, stated in <span class="accent">one sentence</span>.</h1>
+        <h1>Measuring and manipulating <span class="accent">human gene regulation</span>.</h1>
 
-    <!-- REPLACE: two or three lines. What question, at what scale, with what tools. -->
-    <p class="lede">
-      A short paragraph saying what you study, how you study it, and why it
-      matters &mdash; written so that a researcher outside your subfield finishes it
-      and understands the stakes.
-    </p>
+        <p class="lede">
+          Systematic discovery of protein function in human cells &mdash; to
+          understand gene regulation and enable genetic medicine.
+        </p>
+      </div>
 
+      <!-- Decorative: an arrayed-screen readout. Hover lights the wells. -->
+      <div class="hero__grid" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+    </div>
   </header>
 
   <!-- ============ ABOUT ============ -->
   <section class="section" id="about">
     <div class="shell section__grid">
       <p class="eyebrow eyebrow--mute">About</p>
-      <div class="prose prose--dropcap">
-        <!-- REPLACE: img/portrait.svg with a real headshot saved as
-             img/portrait.jpg (square, at least 600x600 px). The CSS renders it
-             as a grayscale circle. -->
-        <img class="portrait" src="img/portrait.svg" alt="Portrait of Alex Rivera"
-             style="margin-bottom: 1.75rem;">
+      <div class="prose">
+        <img class="portrait" src="img/portrait.jpg" alt="Josh Tycko"
+             width="600" height="600" style="margin-bottom: 1.75rem;">
 
         <p>
-          Replace this paragraph with your story, in the third person. Where you
-          are now, whose group you work in, and the through-line connecting the
-          work you did before to the work you do today.
+          Josh Tycko develops high-throughput synthetic biology technologies to
+          measure and manipulate human gene regulation. He is a postdoctoral
+          fellow at Harvard Medical School, in the labs of Michael Greenberg and
+          Martin Pollak.
         </p>
         <p>
-          A second paragraph has room for training and background &mdash; doctorate,
-          where, with whom &mdash; and for the methods you reach for. Keep it to two or
-          three paragraphs. The publications page carries the evidence.
+          He earned his Ph.D. in Genetics at Stanford University with Michael
+          Bassik and Lacra Bintu, supported by an NIH F99/K00 fellowship and the
+          NSF Graduate Research Fellowship. There he built pooled assays that read
+          out the functions of thousands of human protein domains, mapping
+          transcriptional effectors and engineering compact tools to switch genes
+          on and off.
         </p>
         <p>
-          A last line can be personal, or can point forward: what you intend to
-          build when you start <em>your own group</em>.
+          He is also a scientific co-founder of <em>Stylus Medicine</em>, which is
+          translating recombinase-based genome integration into in&nbsp;vivo
+          therapies.
         </p>
       </div>
     </div>
@@ -90,34 +103,33 @@
       <p class="eyebrow eyebrow--mute">Research</p>
       <div>
         <h2>Interests</h2>
-        <!-- REPLACE: three to five. Each should be a question you want answered,
-             not a technique you happen to use. -->
         <ol class="interests" style="margin-top: 2.25rem;">
           <li>
             <div>
-              <h3>The first question you care about</h3>
+              <h3>Gene and chromatin regulation</h3>
               <p>
-                Two sentences on why this question is still open, and what it
-                would take to close it. Name the obstacle that has kept the field
-                from answering it already.
+                Discovering transcriptional effector domains across the human
+                proteome at scale, and engineering improved activators and
+                repressors for synthetic biology.
               </p>
             </div>
           </li>
           <li>
             <div>
-              <h3>The second question you care about</h3>
+              <h3>Gene delivery</h3>
               <p>
-                State the approach that makes this tractable now &mdash; an instrument,
-                a dataset, a method, a scale that was not available before.
+                Finding recombinases and viral vectors that write large DNA
+                sequences into the human genome for durable genetic medicine.
               </p>
             </div>
           </li>
           <li>
             <div>
-              <h3>The third question you care about</h3>
+              <h3>Genetic and epigenetic editing</h3>
               <p>
-                This one can be the ambitious one: the direction your future
-                group would take, if the first two work out.
+                Building CRISPR tools to interrogate the noncoding genome, and
+                measuring and mitigating off-target effects to make safer
+                therapies.
               </p>
             </div>
           </li>
@@ -133,44 +145,41 @@
       <div>
         <h2>Publications</h2>
 
-        <!-- REPLACE: every entry below is a placeholder. Keep three to five here.
-             The full list lives on publications.html. -->
         <ol class="pubs" style="margin-top: 2.25rem;">
           <li>
-            <span class="pubs__year">2026</span>
-            <h3 class="pubs__title">Title of a first-author paper goes here</h3>
-            <p class="pubs__authors">
-              <span class="self">Rivera A</span>, Coauthor B, Coauthor C, Senior Author D.
-              <span class="pubs__venue">Journal Name</span>
-            </p>
-            <div class="pubs__links">
-              <a href="#">DOI</a>
-              <a href="#">PDF</a>
-              <a href="#">Code</a>
-            </div>
-          </li>
-          <li>
-            <span class="pubs__year">2025</span>
-            <h3 class="pubs__title">Title of a second paper goes here</h3>
-            <p class="pubs__authors">
-              Coauthor B, <span class="self">Rivera A</span>, Senior Author D.
-              <span class="pubs__venue">Journal Name</span>
-            </p>
-            <div class="pubs__links">
-              <a href="#">DOI</a>
-              <a href="#">PDF</a>
-            </div>
-          </li>
-          <li>
             <span class="pubs__year">2024</span>
-            <h3 class="pubs__title">Title of a third paper goes here</h3>
+            <h3 class="pubs__title">Development of compact transcriptional effectors using high-throughput measurements in diverse contexts</h3>
             <p class="pubs__authors">
-              <span class="self">Rivera A</span>, Coauthor C, Senior Author D.
-              <span class="pubs__venue">Journal Name</span>
+              <span class="self">Tycko J</span>*, Van MV*, Aradhana, DelRosso N, &hellip; Bintu L, Bassik MC.
+              <span class="pubs__venue">Nature Biotechnology</span>
             </p>
             <div class="pubs__links">
-              <a href="#">DOI</a>
-              <a href="#">Preprint</a>
+              <a href="https://doi.org/10.1038/s41587-024-02442-6">DOI</a>
+              <a href="https://www.twistbioscience.com/blog/science/MGF-HTRecruit">Feature</a>
+            </div>
+          </li>
+          <li>
+            <span class="pubs__year">2022</span>
+            <h3 class="pubs__title">Systematic discovery of recombinases for efficient integration of large DNA sequences into the human genome</h3>
+            <p class="pubs__authors">
+              Durrant MG*, Fanton A*, <span class="self">Tycko J</span>*, &hellip; Bhatt AS, Hsu PD.
+              <span class="pubs__venue">Nature Biotechnology</span>
+            </p>
+            <div class="pubs__links">
+              <a href="https://doi.org/10.1038/s41587-022-01494-w">DOI</a>
+              <a href="https://doi.org/10.1038/s41587-022-01600-y">News &amp; Views</a>
+            </div>
+          </li>
+          <li>
+            <span class="pubs__year">2020</span>
+            <h3 class="pubs__title">High-throughput discovery and characterization of human transcriptional effectors</h3>
+            <p class="pubs__authors">
+              <span class="self">Tycko J</span>, DelRosso N, Hess GT, &hellip; Bassik MC, Bintu L.
+              <span class="pubs__venue">Cell</span>
+            </p>
+            <div class="pubs__links">
+              <a href="https://doi.org/10.1016/j.cell.2020.11.024">DOI</a>
+              <a href="https://prelights.biologists.com/highlights/high-throughput-discovery-and-characterization-of-human-transcriptional-effectors/">preLights</a>
             </div>
           </li>
         </ol>
@@ -187,10 +196,9 @@
 <footer class="footer">
   <div class="shell footer__inner">
     <div>
-      <p style="font-family: var(--serif); font-size: 1.24rem;">Alex Rivera</p>
-      <!-- REPLACE: department and city. -->
+      <p style="font-family: var(--serif); font-size: 1.24rem;">Josh Tycko</p>
       <p class="footer__fine" style="margin-top: 0.6rem;">
-        Department of Physics &middot; Example University
+        Harvard Medical School &middot; Boston
       </p>
     </div>
     <div class="footer__meta">
@@ -198,16 +206,15 @@
         <li><a href="index.html#about">About</a></li>
         <li><a href="publications.html">Publications</a></li>
       </ul>
-      <!-- REPLACE: real address and profile URLs. Leave as # until you have them. -->
       <div class="footer__icons">
-        <a class="icon-link" href="mailto:alex@example.edu" aria-label="Email" title="Email">
+        <a class="icon-link" href="mailto:joshtycko@hms.harvard.edu" aria-label="Email" title="Email">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="3" y="5.5" width="18" height="13" rx="1.5"/>
             <path d="M4 7.2l8 5.8 8-5.8"/>
           </svg>
         </a>
-        <a class="icon-link" href="#" aria-label="Google Scholar" title="Google Scholar">
+        <a class="icon-link" href="https://scholar.google.com/citations?user=_H0TWwQAAAAJ" aria-label="Google Scholar" title="Google Scholar">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 5L2.8 9.6l9.2 4.6 9.2-4.6L12 5z"/>
@@ -215,13 +222,12 @@
             <path d="M21.2 9.6v4.5"/>
           </svg>
         </a>
-        <a class="icon-link" href="#" aria-label="X" title="X">
+        <a class="icon-link" href="https://x.com/joshtycko" aria-label="X" title="X">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
           </svg>
         </a>
-        <!-- REPLACE: your ORCID URL, e.g. https://orcid.org/0000-0000-0000-0000 -->
-        <a class="icon-link" href="#" aria-label="ORCID" title="ORCID">
+        <a class="icon-link" href="https://orcid.org/0000-0002-4108-0575" aria-label="ORCID" title="ORCID">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <circle cx="12" cy="12" r="12"/>
             <text x="12" y="16.1" text-anchor="middle"
