@@ -34,6 +34,9 @@
 :root {
   --serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
   --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  /* Data/readout layer: years, counts, labels, IDs. Josh reads out screens —
+     the quantitative text is set like a sequencing readout, not body copy. */
+  --mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
 
   /* Warm paper, near-black ink, one restrained accent. */
   --paper: #fdfcf9;
@@ -51,8 +54,8 @@
   --step-0: clamp(1.00rem, 0.96rem + 0.20vw, 1.12rem);
   --step-1: clamp(1.20rem, 1.12rem + 0.38vw, 1.42rem);
   --step-2: clamp(1.50rem, 1.34rem + 0.75vw, 2.00rem);
-  --step-3: clamp(1.90rem, 1.58rem + 1.55vw, 2.90rem);
-  --step-4: clamp(2.60rem, 1.90rem + 3.40vw, 4.80rem);
+  --step-3: clamp(1.6rem, 1.42rem + 0.9vw, 2.2rem);
+  --step-4: clamp(1.95rem, 1.6rem + 1.75vw, 3.05rem);
 
   --measure: 66ch;
   --gutter: clamp(1.5rem, 5vw, 4rem);
@@ -158,10 +161,10 @@ p {
 
 /* The small tracked-out uppercase label. Used sparingly. */
 .eyebrow {
-  font-family: var(--sans);
+  font-family: var(--mono);
   font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.19em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -317,20 +320,9 @@ a:focus-visible {
 }
 
 .hero h1 {
-  margin-top: 1.5rem;
-  max-width: 15ch;
-}
-
-/* Instead of an italic colored word, the key phrase is marked with a
-   highlighter swipe — a nod to picking a hit out of a screen. */
-.hero h1 .accent {
-  background: linear-gradient(
-    transparent 58%,
-    color-mix(in srgb, var(--accent) 32%, transparent) 58%
-  );
-  padding-inline: 0.06em;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
+  margin-top: 1.25rem;
+  max-width: 20ch;
+  font-weight: 450;
 }
 
 .hero .lede {
@@ -376,33 +368,19 @@ a:focus-visible {
 
 /* ---------- Research interests: hanging numerals ---------- */
 
+/* Research areas are parallel, not a sequence — no numbering, just rules. */
 .interests {
   list-style: none;
-  counter-reset: item;
 }
 
 .interests li {
-  counter-increment: item;
   padding-block: 1.6rem;
   border-top: 1px solid var(--rule);
-  display: grid;
-  grid-template-columns: 3rem minmax(0, 1fr);
-  gap: 0 1rem;
-  align-items: baseline;
 }
 
 .interests li:first-child {
   border-top: 0;
   padding-top: 0;
-}
-
-.interests li::before {
-  content: counter(item, decimal-leading-zero);
-  font-size: 0.74rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
 }
 
 .interests p {
@@ -441,11 +419,11 @@ a:focus-visible {
 }
 
 .pubs__year {
-  font-size: 0.76rem;
+  font-family: var(--mono);
+  font-size: 0.74rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.02em;
   color: var(--ink-mute);
-  font-variant-numeric: tabular-nums;
   padding-top: 0.45rem;
 }
 
@@ -471,10 +449,10 @@ a:focus-visible {
 /* Countdown index above the year in the hanging column. */
 .pubs__num {
   display: block;
-  font-size: 1.02rem;
+  font-family: var(--mono);
+  font-size: 1rem;
   font-weight: 500;
   color: var(--accent);
-  font-variant-numeric: tabular-nums;
   letter-spacing: 0;
   line-height: 1;
   margin-bottom: 0.4rem;
@@ -519,15 +497,24 @@ a:focus-visible {
 /* Type badge: Research / Review / Protocol / Preprint. Neutral by default;
    preprints take the accent to flag not-yet-peer-reviewed work. */
 .pubs__tag {
-  font-size: 0.64rem;
-  font-weight: 600;
-  letter-spacing: 0.11em;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-mute);
   border: 1px solid var(--rule-strong);
   border-radius: 2px;
-  padding: 0.14rem 0.45rem;
+  padding: 0.16rem 0.45rem;
   align-self: center;
+}
+
+/* Patent / accession identifier — mono, like the rest of the data layer. */
+.pubs__id {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
 }
 
 .pubs__tag--preprint {
