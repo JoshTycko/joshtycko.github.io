@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- REPLACE: title + description are what search engines show. Keep the
+     description under ~155 characters. -->
+<title>Alex Rivera</title>
+<meta name="description" content="Alex Rivera is a postdoctoral researcher in the Department of Physics at Example University.">
+
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/newsreader-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+
+<!-- REPLACE: set this to the real domain once DNS is pointed. -->
+<link rel="canonical" href="https://example.com/">
+<meta property="og:title" content="Alex Rivera">
+<meta property="og:description" content="Postdoctoral researcher, Department of Physics, Example University.">
+<meta property="og:type" content="profile">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="shell nav__inner">
+    <a class="nav__brand" href="index.html">Alex Rivera</a>
+    <ul class="nav__links">
+      <li><a href="index.html" aria-current="page">About</a></li>
+      <li><a href="index.html#research">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <header class="hero shell">
+    <!-- REPLACE: title and institution. -->
+    <p class="eyebrow">Postdoctoral Researcher &middot; Department of Physics</p>
+
+    <!-- REPLACE: one sentence, the thesis of the work. The italic accent word
+         should be the single most important noun in it. -->
+    <h1>Your research, stated in <span class="accent">one sentence</span>.</h1>
+
+    <!-- REPLACE: two or three lines. What question, at what scale, with what tools. -->
+    <p class="lede">
+      A short paragraph saying what you study, how you study it, and why it
+      matters &mdash; written so that a researcher outside your subfield finishes it
+      and understands the stakes.
+    </p>
+
+    <div class="hero__meta">
+      <!-- REPLACE: real address and profile URLs. Leave as # until you have them. -->
+      <a class="button" href="mailto:alex@example.edu">Email</a>
+      <a class="arrow" href="#">Google Scholar</a>
+      <a class="arrow" href="#">X</a>
+    </div>
+  </header>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="shell section__grid">
+      <p class="eyebrow eyebrow--mute">About</p>
+      <div class="prose">
+        <!-- REPLACE: img/portrait.svg with a real headshot saved as
+             img/portrait.jpg (square, at least 600x600 px). The CSS renders it
+             as a grayscale circle. -->
+        <img class="portrait" src="img/portrait.svg" alt="Portrait of Alex Rivera"
+             style="margin-bottom: 1.75rem;">
+
+        <p>
+          Replace this paragraph with your story, in the third person. Where you
+          are now, whose group you work in, and the through-line connecting the
+          work you did before to the work you do today.
+        </p>
+        <p>
+          A second paragraph has room for training and background &mdash; doctorate,
+          where, with whom &mdash; and for the methods you reach for. Keep it to two or
+          three paragraphs. The publications page carries the evidence.
+        </p>
+        <p>
+          A last line can be personal, or can point forward: what you intend to
+          build when you start <em>your own group</em>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH INTERESTS ============ -->
+  <section class="section" id="research">
+    <div class="shell section__grid">
+      <p class="eyebrow eyebrow--mute">Research</p>
+      <div>
+        <h2>Interests</h2>
+        <!-- REPLACE: three to five. Each should be a question you want answered,
+             not a technique you happen to use. -->
+        <ol class="interests" style="margin-top: 2.25rem;">
+          <li>
+            <div>
+              <h3>The first question you care about</h3>
+              <p>
+                Two sentences on why this question is still open, and what it
+                would take to close it. Name the obstacle that has kept the field
+                from answering it already.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>The second question you care about</h3>
+              <p>
+                State the approach that makes this tractable now &mdash; an instrument,
+                a dataset, a method, a scale that was not available before.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>The third question you care about</h3>
+              <p>
+                This one can be the ambitious one: the direction your future
+                group would take, if the first two work out.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SELECTED PUBLICATIONS ============ -->
+  <section class="section" id="selected">
+    <div class="shell section__grid">
+      <p class="eyebrow eyebrow--mute">Selected work</p>
+      <div>
+        <h2>Publications</h2>
+
+        <!-- REPLACE: every entry below is a placeholder. Keep three to five here.
+             The full list lives on publications.html. -->
+        <ol class="pubs" style="margin-top: 2.25rem;">
+          <li>
+            <span class="pubs__year">2026</span>
+            <h3 class="pubs__title">Title of a first-author paper goes here</h3>
+            <p class="pubs__authors">
+              <span class="self">Rivera A</span>, Coauthor B, Coauthor C, Senior Author D.
+              <span class="pubs__venue">Journal Name</span>
+            </p>
+            <div class="pubs__links">
+              <a href="#">DOI</a>
+              <a href="#">PDF</a>
+              <a href="#">Code</a>
+            </div>
+          </li>
+          <li>
+            <span class="pubs__year">2025</span>
+            <h3 class="pubs__title">Title of a second paper goes here</h3>
+            <p class="pubs__authors">
+              Coauthor B, <span class="self">Rivera A</span>, Senior Author D.
+              <span class="pubs__venue">Journal Name</span>
+            </p>
+            <div class="pubs__links">
+              <a href="#">DOI</a>
+              <a href="#">PDF</a>
+            </div>
+          </li>
+          <li>
+            <span class="pubs__year">2024</span>
+            <h3 class="pubs__title">Title of a third paper goes here</h3>
+            <p class="pubs__authors">
+              <span class="self">Rivera A</span>, Coauthor C, Senior Author D.
+              <span class="pubs__venue">Journal Name</span>
+            </p>
+            <div class="pubs__links">
+              <a href="#">DOI</a>
+              <a href="#">Preprint</a>
+            </div>
+          </li>
+        </ol>
+
+        <p style="margin-top: 2.25rem;">
+          <a class="arrow" href="publications.html">All publications</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="shell footer__inner">
+    <div>
+      <p style="font-family: var(--serif); font-size: 1.24rem;">Alex Rivera</p>
+      <!-- REPLACE: department and city. -->
+      <p class="footer__fine" style="margin-top: 0.6rem;">
+        Department of Physics &middot; Example University
+      </p>
+    </div>
+    <ul class="footer__links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="mailto:alex@example.edu">Email</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
