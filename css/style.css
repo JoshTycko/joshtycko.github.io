@@ -666,6 +666,18 @@ a:focus-visible {
   text-align: center;
 }
 
+/* Drop cap on the opening paragraph — a printed-monograph touch.
+   Float-based so it renders in every browser, including Firefox. */
+.prose--dropcap > p:first-of-type::first-letter {
+  float: left;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 3.3em;
+  line-height: 0.78;
+  padding: 0.05em 0.12em 0 0;
+  color: var(--accent);
+}
+
 /* Small icon-only link (ORCID). Color-only hover, like the arrows. */
 .icon-link {
   display: inline-flex;
