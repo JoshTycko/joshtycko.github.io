@@ -41,7 +41,7 @@
     <h1>Publications</h1>
     <p class="lede">
       A selected few first, then everything by year. An asterisk marks equal
-      contribution.
+      contribution; a hash (#) marks co-corresponding authorship.
     </p>
   </header>
 
@@ -52,60 +52,65 @@
       <ol class="pubs">
         <li>
           <span class="pubs__year">2024</span>
-          <h3 class="pubs__title">Development of compact transcriptional effectors using high-throughput measurements in diverse contexts</h3>
+          <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41587-024-02442-6">Development of compact transcriptional effectors using high-throughput measurements in diverse contexts</a></h3>
           <p class="pubs__authors">
             <span class="self">Tycko J</span>*, Van MV*, Aradhana, DelRosso N, &hellip; Bintu L, Bassik MC.
             <span class="pubs__venue">Nature Biotechnology</span>
           </p>
           <div class="pubs__links">
             <a href="https://doi.org/10.1038/s41587-024-02442-6">DOI</a>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12043968/">PDF</a>
             <a href="https://www.twistbioscience.com/blog/science/MGF-HTRecruit">Feature</a>
           </div>
         </li>
         <li>
           <span class="pubs__year">2024</span>
-          <h3 class="pubs__title">Multicenter integrated analysis of noncoding CRISPRi screens</h3>
+          <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41592-024-02216-7">Multicenter integrated analysis of noncoding CRISPRi screens</a></h3>
           <p class="pubs__authors">
-            Yao D*, <span class="self">Tycko J</span>*, Oh JW*, &hellip; Bassik MC, Reilly SK.
+            Yao D*, <span class="self">Tycko J</span>*#, Oh JW*, &hellip; Bassik MC, Reilly SK.
             <span class="pubs__venue">Nature Methods</span>
           </p>
           <div class="pubs__links">
             <a href="https://doi.org/10.1038/s41592-024-02216-7">DOI</a>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11009116/">PDF</a>
           </div>
         </li>
         <li>
           <span class="pubs__year">2022</span>
-          <h3 class="pubs__title">Systematic discovery of recombinases for efficient integration of large DNA sequences into the human genome</h3>
+          <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41587-022-01494-w">Systematic discovery of recombinases for efficient integration of large DNA sequences into the human genome</a></h3>
           <p class="pubs__authors">
             Durrant MG*, Fanton A*, <span class="self">Tycko J</span>*, &hellip; Bhatt AS, Hsu PD.
             <span class="pubs__venue">Nature Biotechnology</span>
           </p>
           <div class="pubs__links">
             <a href="https://doi.org/10.1038/s41587-022-01494-w">DOI</a>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10083194/">PDF</a>
             <a href="https://doi.org/10.1038/s41587-022-01600-y">News &amp; Views</a>
           </div>
         </li>
         <li>
           <span class="pubs__year">2020</span>
-          <h3 class="pubs__title">High-throughput discovery and characterization of human transcriptional effectors</h3>
+          <h3 class="pubs__title"><a href="https://doi.org/10.1016/j.cell.2020.11.024">High-throughput discovery and characterization of human transcriptional effectors</a></h3>
           <p class="pubs__authors">
             <span class="self">Tycko J</span>, DelRosso N, Hess GT, &hellip; Bassik MC, Bintu L.
             <span class="pubs__venue">Cell</span>
           </p>
           <div class="pubs__links">
             <a href="https://doi.org/10.1016/j.cell.2020.11.024">DOI</a>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8178797/">PDF</a>
             <a href="https://prelights.biologists.com/highlights/high-throughput-discovery-and-characterization-of-human-transcriptional-effectors/">preLights</a>
           </div>
         </li>
         <li>
           <span class="pubs__year">2019</span>
-          <h3 class="pubs__title">Mitigation of off-target toxicity in CRISPR-Cas9 screens for essential non-coding elements</h3>
+          <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41467-019-11955-7">Mitigation of off-target toxicity in CRISPR-Cas9 screens for essential non-coding elements</a></h3>
           <p class="pubs__authors">
             <span class="self">Tycko J</span>*, Wainberg M*, Marinov GK*, &hellip; Kundaje A, Bassik MC.
             <span class="pubs__venue">Nature Communications</span>
           </p>
           <div class="pubs__links">
             <a href="https://doi.org/10.1038/s41467-019-11955-7">DOI</a>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6731277/">PDF</a>
           </div>
         </li>
       </ol>
@@ -116,331 +121,395 @@
   <section class="section">
     <div class="shell section__grid">
       <p class="eyebrow eyebrow--mute">All work</p>
-      <div>
-        <ol class="pubs">
-          <li>
-            <span class="pubs__year">2026</span>
-            <h3 class="pubs__title">High-throughput measurements of protein domain functions using magnetic separation</h3>
+      <div class="pubfilter">
+        <!-- CSS-only type filter: radios drive visibility of the list below. -->
+        <input class="pubfilter__radio" type="radio" name="pubtype" id="pf-all" checked>
+        <input class="pubfilter__radio" type="radio" name="pubtype" id="pf-research">
+        <input class="pubfilter__radio" type="radio" name="pubtype" id="pf-review">
+        <input class="pubfilter__radio" type="radio" name="pubtype" id="pf-protocol">
+        <input class="pubfilter__radio" type="radio" name="pubtype" id="pf-preprint">
+        <div class="pubfilter__chips">
+          <label for="pf-all">All</label>
+          <label for="pf-research">Research</label>
+          <label for="pf-review">Reviews</label>
+          <label for="pf-protocol">Protocols</label>
+          <label for="pf-preprint">Preprints</label>
+        </div>
+
+        <ol class="pubs pubs--numbered">
+          <li data-type="protocol">
+            <span class="pubs__year"><span class="pubs__num">29</span>2026</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41596-026-01397-z">High-throughput measurements of protein domain functions using magnetic separation</a></h3>
             <p class="pubs__authors">
-              Thurm AR, <span class="self">Tycko J</span>, Ludwig CH, &hellip; Bassik MC, Bintu L.
+              Thurm AR, <span class="self">Tycko J</span>#, Ludwig CH, &hellip; Bassik MC, Bintu L.
               <span class="pubs__venue">Nature Protocols</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag pubs__tag--protocol">Protocol</span>
               <a href="https://doi.org/10.1038/s41596-026-01397-z">DOI</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2025</span>
-            <h3 class="pubs__title">Cytotoxicity of activator expression in CRISPR-based transcriptional activation systems</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">28</span>2025</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41467-025-63570-4">Cytotoxicity of activator expression in CRISPR-based transcriptional activation systems</a></h3>
             <p class="pubs__authors">
               Liang Z, Maddineni A, &hellip; <span class="self">Tycko J</span>, &hellip; Gottwein E.
               <span class="pubs__venue">Nature Communications</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1038/s41467-025-63570-4">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12394647/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2025</span>
-            <h3 class="pubs__title">Toward optimizing diversifying base editors for high-throughput mutational scanning studies</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">27</span>2025</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1093/nar/gkaf620">Toward optimizing diversifying base editors for high-throughput mutational scanning studies</a></h3>
             <p class="pubs__authors">
               Schwartz CI, Abell NS, &hellip; <span class="self">Tycko J</span>, Montgomery SB, Hess GT.
               <span class="pubs__venue">Nucleic Acids Research</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1093/nar/gkaf620">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12231578/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2025</span>
-            <h3 class="pubs__title">Machine-guided dual-objective protein engineering for deimmunization and therapeutic functions</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">26</span>2025</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1016/j.cels.2025.101299">Machine-guided dual-objective protein engineering for deimmunization and therapeutic functions</a></h3>
             <p class="pubs__authors">
               Wolfsberg E, Paul JS, <span class="self">Tycko J</span>, &hellip; Alizadeh AA, Gao XJ.
               <span class="pubs__venue">Cell Systems</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1016/j.cels.2025.101299">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12276912/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2025</span>
-            <h3 class="pubs__title">An image-based CRISPR screen reveals splicing-mediated control of HP1&alpha; condensates</h3>
+          <li data-type="preprint">
+            <span class="pubs__year"><span class="pubs__num">25</span>2025</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1101/2025.09.21.676939">An image-based CRISPR screen reveals splicing-mediated control of HP1&alpha; condensates</a></h3>
             <p class="pubs__authors">
               Wong MMK, Zhou S, &hellip; <span class="self">Tycko J</span>, &hellip; Sanulli S.
               <span class="pubs__venue">bioRxiv</span>
             </p>
             <div class="pubs__links">
-              <span class="pubs__tag">Preprint</span>
+              <span class="pubs__tag pubs__tag--preprint">Preprint</span>
               <a href="https://doi.org/10.1101/2025.09.21.676939">bioRxiv</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2024</span>
-            <h3 class="pubs__title">Development of compact transcriptional effectors using high-throughput measurements in diverse contexts</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">24</span>2024</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41587-024-02442-6">Development of compact transcriptional effectors using high-throughput measurements in diverse contexts</a></h3>
             <p class="pubs__authors">
               <span class="self">Tycko J</span>*, Van MV*, Aradhana, DelRosso N, &hellip; Bintu L, Bassik MC.
               <span class="pubs__venue">Nature Biotechnology</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1038/s41587-024-02442-6">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12043968/">PDF</a>
               <a href="https://www.twistbioscience.com/blog/science/MGF-HTRecruit">Feature</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2024</span>
-            <h3 class="pubs__title">Multicenter integrated analysis of noncoding CRISPRi screens</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">23</span>2024</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41592-024-02216-7">Multicenter integrated analysis of noncoding CRISPRi screens</a></h3>
             <p class="pubs__authors">
-              Yao D*, <span class="self">Tycko J</span>*, Oh JW*, &hellip; Bassik MC, Reilly SK.
+              Yao D*, <span class="self">Tycko J</span>*#, Oh JW*, &hellip; Bassik MC, Reilly SK.
               <span class="pubs__venue">Nature Methods</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1038/s41592-024-02216-7">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11009116/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2024</span>
-            <h3 class="pubs__title">Deciphering the impact of genomic variation on function</h3>
+          <li data-type="review">
+            <span class="pubs__year"><span class="pubs__num">22</span>2024</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41586-024-07510-0">Deciphering the impact of genomic variation on function</a></h3>
             <p class="pubs__authors">
               The IGVF Consortium (incl. <span class="self">Tycko J</span>).
               <span class="pubs__venue">Nature</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag pubs__tag--review">Review</span>
               <a href="https://doi.org/10.1038/s41586-024-07510-0">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11973978/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2024</span>
-            <h3 class="pubs__title">Prediction and design of transcriptional repressor domains with large-scale mutational scans and deep learning</h3>
+          <li data-type="preprint">
+            <span class="pubs__year"><span class="pubs__num">21</span>2024</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1101/2024.09.21.614253">Prediction and design of transcriptional repressor domains with large-scale mutational scans and deep learning</a></h3>
             <p class="pubs__authors">
               Valbuena R*, Nigam A*, <span class="self">Tycko J</span>, &hellip; Kundaje A, Bassik MC.
               <span class="pubs__venue">bioRxiv</span>
             </p>
             <div class="pubs__links">
-              <span class="pubs__tag">Preprint</span>
+              <span class="pubs__tag pubs__tag--preprint">Preprint</span>
               <a href="https://doi.org/10.1101/2024.09.21.614253">bioRxiv</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2024</span>
-            <h3 class="pubs__title">Tunable, proteolytic dosage control of CRISPR-Cas systems for dosage-sensitive disorders</h3>
+          <li data-type="preprint">
+            <span class="pubs__year"><span class="pubs__num">20</span>2024</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1101/2024.10.09.617463">Tunable, proteolytic dosage control of CRISPR-Cas systems for dosage-sensitive disorders</a></h3>
             <p class="pubs__authors">
               Katz N, An C, &hellip; <span class="self">Tycko J</span>, &hellip; Gao XJ.
               <span class="pubs__venue">bioRxiv</span>
             </p>
             <div class="pubs__links">
-              <span class="pubs__tag">Preprint</span>
+              <span class="pubs__tag pubs__tag--preprint">Preprint</span>
               <a href="https://doi.org/10.1101/2024.10.09.617463">bioRxiv</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2023</span>
-            <h3 class="pubs__title">Large-scale mapping and mutagenesis of human transcriptional effector domains</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">19</span>2023</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41586-023-05906-y">Large-scale mapping and mutagenesis of human transcriptional effector domains</a></h3>
             <p class="pubs__authors">
               DelRosso N, <span class="self">Tycko J</span>, Suzuki P, &hellip; Bassik MC, Bintu L.
               <span class="pubs__venue">Nature</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1038/s41586-023-05906-y">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10484233/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2023</span>
-            <h3 class="pubs__title">A genome-wide genetic screen uncovers determinants of human pigmentation</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">18</span>2023</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1126/science.ade6289">A genome-wide genetic screen uncovers determinants of human pigmentation</a></h3>
             <p class="pubs__authors">
               Bajpai VK, Swigut T, &hellip; <span class="self">Tycko J</span>, &hellip; Wysocka J.
               <span class="pubs__venue">Science</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1126/science.ade6289">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10901463/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2023</span>
-            <h3 class="pubs__title">High-throughput functional characterization of combinations of transcriptional activators and repressors</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">17</span>2023</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1016/j.cels.2023.07.001">High-throughput functional characterization of combinations of transcriptional activators and repressors</a></h3>
             <p class="pubs__authors">
               Mukund AX, <span class="self">Tycko J</span>, Allen SJ, &hellip; Bassik MC, Bintu L.
               <span class="pubs__venue">Cell Systems</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1016/j.cels.2023.07.001">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10642976/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2023</span>
-            <h3 class="pubs__title">High-throughput discovery and characterization of viral transcriptional effectors in human cells</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">16</span>2023</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1016/j.cels.2023.05.008">High-throughput discovery and characterization of viral transcriptional effectors in human cells</a></h3>
             <p class="pubs__authors">
               Ludwig CH, Thurm AR, &hellip; <span class="self">Tycko J</span>, &hellip; Glaunsinger BA, Bintu L.
               <span class="pubs__venue">Cell Systems</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1016/j.cels.2023.05.008">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10350249/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2023</span>
-            <h3 class="pubs__title">Direct profiling of genome-wide dCas9 and Cas9 specificity using ssDNA mapping (CasKAS)</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">15</span>2023</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1186/s13059-023-02930-z">Direct profiling of genome-wide dCas9 and Cas9 specificity using ssDNA mapping (CasKAS)</a></h3>
             <p class="pubs__authors">
               Marinov GK, Kim SH, &hellip; <span class="self">Tycko J</span>, &hellip; Greenleaf WJ.
               <span class="pubs__venue">Genome Biology</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1186/s13059-023-02930-z">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10120127/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2022</span>
-            <h3 class="pubs__title">Systematic discovery of recombinases for efficient integration of large DNA sequences into the human genome</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">14</span>2022</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41587-022-01494-w">Systematic discovery of recombinases for efficient integration of large DNA sequences into the human genome</a></h3>
             <p class="pubs__authors">
               Durrant MG*, Fanton A*, <span class="self">Tycko J</span>*, &hellip; Bhatt AS, Hsu PD.
               <span class="pubs__venue">Nature Biotechnology</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1038/s41587-022-01494-w">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10083194/">PDF</a>
               <a href="https://doi.org/10.1038/s41587-022-01600-y">News &amp; Views</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2022</span>
-            <h3 class="pubs__title">Modeling the efficacy of CRISPR gene drive for snail immunity on schistosomiasis control</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">13</span>2022</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1371/journal.pntd.0010894">Modeling the efficacy of CRISPR gene drive for snail immunity on schistosomiasis control</a></h3>
             <p class="pubs__authors">
               Grewelle RE, Perez-Saez J, <span class="self">Tycko J</span>, &hellip; De Leo GA.
               <span class="pubs__venue">PLoS Neglected Tropical Diseases</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1371/journal.pntd.0010894">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9648845/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2022</span>
-            <h3 class="pubs__title">The sound of silence: transgene silencing in mammalian cell engineering</h3>
+          <li data-type="review">
+            <span class="pubs__year"><span class="pubs__num">12</span>2022</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1016/j.cels.2022.11.005">The sound of silence: transgene silencing in mammalian cell engineering</a></h3>
             <p class="pubs__authors">
               Cabrera A*, Edelstein HI*, &hellip; <span class="self">Tycko J</span>*, &hellip; Deans TL.
               <span class="pubs__venue">Cell Systems</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag pubs__tag--review">Review</span>
               <a href="https://doi.org/10.1016/j.cels.2022.11.005">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9880859/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2021</span>
-            <h3 class="pubs__title">AAV vector-mediated expression of an anti-respiratory syncytial virus antibody prevents infection in mouse airways</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">11</span>2021</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1089/hum.2021.079">AAV vector-mediated expression of an anti-respiratory syncytial virus antibody prevents infection in mouse airways</a></h3>
             <p class="pubs__authors">
               <span class="self">Tycko J</span>, Adam VS, &hellip; Wilson JM, Limberis MP.
               <span class="pubs__venue">Human Gene Therapy</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1089/hum.2021.079">DOI</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2020</span>
-            <h3 class="pubs__title">High-throughput discovery and characterization of human transcriptional effectors</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">10</span>2020</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1016/j.cell.2020.11.024">High-throughput discovery and characterization of human transcriptional effectors</a></h3>
             <p class="pubs__authors">
               <span class="self">Tycko J</span>, DelRosso N, Hess GT, &hellip; Bassik MC, Bintu L.
               <span class="pubs__venue">Cell</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1016/j.cell.2020.11.024">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8178797/">PDF</a>
               <a href="https://prelights.biologists.com/highlights/high-throughput-discovery-and-characterization-of-human-transcriptional-effectors/">preLights</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2019</span>
-            <h3 class="pubs__title">Mitigation of off-target toxicity in CRISPR-Cas9 screens for essential non-coding elements</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">9</span>2019</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41467-019-11955-7">Mitigation of off-target toxicity in CRISPR-Cas9 screens for essential non-coding elements</a></h3>
             <p class="pubs__authors">
               <span class="self">Tycko J</span>*, Wainberg M*, Marinov GK*, &hellip; Kundaje A, Bassik MC.
               <span class="pubs__venue">Nature Communications</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1038/s41467-019-11955-7">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6731277/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2019</span>
-            <h3 class="pubs__title">Identification of guide-intrinsic determinants of Cas9 specificity</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">8</span>2019</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1089/crispr.2019.0009">Identification of guide-intrinsic determinants of Cas9 specificity</a></h3>
             <p class="pubs__authors">
               Huston NC, <span class="self">Tycko J</span>, Tillotson EL, &hellip; Steinberg BE.
               <span class="pubs__venue">The CRISPR Journal</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1089/crispr.2019.0009">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6694761/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2019</span>
-            <h3 class="pubs__title">Gene drives for schistosomiasis transmission control</h3>
+          <li data-type="review">
+            <span class="pubs__year"><span class="pubs__num">7</span>2019</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1371/journal.pntd.0007833">Gene drives for schistosomiasis transmission control</a></h3>
             <p class="pubs__authors">
               Maier T, Wheeler NJ, &hellip; <span class="self">Tycko J</span>, &hellip; Reinhard-Rupp J.
               <span class="pubs__venue">PLoS Neglected Tropical Diseases</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag pubs__tag--review">Review</span>
               <a href="https://doi.org/10.1371/journal.pntd.0007833">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6922350/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2018</span>
-            <h3 class="pubs__title">Pairwise library screen systematically interrogates <em>Staphylococcus aureus</em> Cas9 specificity in human cells</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">6</span>2018</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41467-018-05391-2">Pairwise library screen systematically interrogates <em>Staphylococcus aureus</em> Cas9 specificity in human cells</a></h3>
             <p class="pubs__authors">
               <span class="self">Tycko J</span>, Barrera LA, Huston NC, &hellip; Wilson CJ, Hsu PD.
               <span class="pubs__venue">Nature Communications</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1038/s41467-018-05391-2">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6063963/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2017</span>
-            <h3 class="pubs__title">Enhancer connectome in primary human cells identifies target genes of disease-associated DNA elements</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">5</span>2017</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1038/ng.3963">Enhancer connectome in primary human cells identifies target genes of disease-associated DNA elements</a></h3>
             <p class="pubs__authors">
               Mumbach MR, Satpathy AT, &hellip; <span class="self">Tycko J</span>, &hellip; Chang HY.
               <span class="pubs__venue">Nature Genetics</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1038/ng.3963">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5805393/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2017</span>
-            <h3 class="pubs__title">Methods and applications of CRISPR-mediated base editing in eukaryotic genomes</h3>
+          <li data-type="review">
+            <span class="pubs__year"><span class="pubs__num">4</span>2017</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1016/j.molcel.2017.09.029">Methods and applications of CRISPR-mediated base editing in eukaryotic genomes</a></h3>
             <p class="pubs__authors">
               Hess GT*, <span class="self">Tycko J</span>*, Yao D*, Bassik MC.
               <span class="pubs__venue">Molecular Cell</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag pubs__tag--review">Review</span>
               <a href="https://doi.org/10.1016/j.molcel.2017.09.029">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5997582/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2016</span>
-            <h3 class="pubs__title">Methods for optimizing CRISPR-Cas9 genome editing specificity</h3>
+          <li data-type="review">
+            <span class="pubs__year"><span class="pubs__num">3</span>2016</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1016/j.molcel.2016.07.004">Methods for optimizing CRISPR-Cas9 genome editing specificity</a></h3>
             <p class="pubs__authors">
               <span class="self">Tycko J</span>, Myer VE, Hsu PD.
               <span class="pubs__venue">Molecular Cell</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag pubs__tag--review">Review</span>
               <a href="https://doi.org/10.1016/j.molcel.2016.07.004">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4976696/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2016</span>
-            <h3 class="pubs__title">Toolbox for exploring modular gene regulation in synthetic biology training</h3>
+          <li data-type="research">
+            <span class="pubs__year"><span class="pubs__num">2</span>2016</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1021/acssynbio.6b00057">Toolbox for exploring modular gene regulation in synthetic biology training</a></h3>
             <p class="pubs__authors">
               Magaraci MS, Bermudez JG, &hellip; <span class="self">Tycko J</span>, &hellip; Chow BY.
               <span class="pubs__venue">ACS Synthetic Biology</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag">Research</span>
               <a href="https://doi.org/10.1021/acssynbio.6b00057">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4947003/">PDF</a>
             </div>
           </li>
-          <li>
-            <span class="pubs__year">2013</span>
-            <h3 class="pubs__title">Lessons learned from the clinical development and market authorization of Glybera</h3>
+          <li data-type="review">
+            <span class="pubs__year"><span class="pubs__num">1</span>2013</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1089/humc.2013.087">Lessons learned from the clinical development and market authorization of Glybera</a></h3>
             <p class="pubs__authors">
               Bryant LM*, &hellip; <span class="self">Tycko J</span>*, &hellip; Wilson JM.
               <span class="pubs__venue">Human Gene Therapy Clinical Development</span>
             </p>
             <div class="pubs__links">
+              <span class="pubs__tag pubs__tag--review">Review</span>
               <a href="https://doi.org/10.1089/humc.2013.087">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3992977/">PDF</a>
             </div>
           </li>
         </ol>
