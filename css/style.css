@@ -709,15 +709,19 @@ a:focus-visible {
   }
 }
 
-.hero__grid {
+.hero__figure {
   display: none;
+  margin: 0;
 }
 
-@media (min-width: 56rem) {
+@media (min-width: 52rem) {
+  .hero__figure {
+    display: block;
+  }
   .hero__grid {
     display: grid;
-    grid-template-columns: repeat(8, 20px);
-    grid-auto-rows: 20px;
+    grid-template-columns: repeat(8, 22px);
+    grid-auto-rows: 22px;
     justify-content: end;
   }
   .hero__grid i {
@@ -729,19 +733,33 @@ a:focus-visible {
   .hero__grid i::before {
     content: '';
     position: absolute;
-    inset: 7px;
+    inset: 6.5px;
     border-radius: 50%;
-    background: var(--rule-strong);
+    background: color-mix(in srgb, var(--ink) 26%, transparent);
     transition: background 750ms ease, transform 750ms ease;
   }
-  /* The enriched hits, lit by default. */
+  /* The enriched hits: lit amber and larger, so the rank curve reads. */
   .hero__grid i.hit::before {
     background: var(--accent);
+    transform: scale(1.35);
   }
   .hero__grid i:hover::before {
     background: var(--accent);
-    transform: scale(1.55);
+    transform: scale(1.6);
     transition: none;
+  }
+  /* Small readout caption — names the graphic in the data-layer voice. */
+  .hero__figcap {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    text-align: right;
+    margin-top: 0.85rem;
+  }
+  .hero__figcap .hit-word {
+    color: var(--accent);
   }
 }
 
