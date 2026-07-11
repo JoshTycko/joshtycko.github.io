@@ -180,6 +180,21 @@ p {
   max-width: 54ch;
 }
 
+/* Small marker key under the Publications lede — quiet, not a headline. */
+.pubs-legend {
+  margin-top: 0.9rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-mute);
+}
+
+/* Author-list markers (* equal, # co-corresponding) read as superscripts. */
+.pubs__authors sup {
+  font-size: 0.7em;
+  font-weight: 500;
+}
+
 .prose p {
   max-width: var(--measure);
 }
@@ -747,19 +762,6 @@ a:focus-visible {
     background: var(--accent);
     transform: scale(1.6);
     transition: none;
-  }
-  /* Small readout caption — names the graphic in the data-layer voice. */
-  .hero__figcap {
-    font-family: var(--mono);
-    font-size: 0.62rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-    text-align: right;
-    margin-top: 0.85rem;
-  }
-  .hero__figcap .hit-word {
-    color: var(--accent);
   }
 }
 
