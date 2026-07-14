@@ -3,20 +3,118 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Josh Tycko</title>
-<meta name="description" content="Josh Tycko is a postdoctoral fellow at Harvard Medical School developing high-throughput technologies to measure and manipulate human gene regulation.">
-
+<meta name="description" content="Josh Tycko — postdoctoral fellow at Harvard Medical School. Measuring and manipulating human gene regulation with high-throughput methods.">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/newsreader-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css">
+<style>
+@font-face{font-family:'Newsreader';src:url('fonts/newsreader-var.woff2') format('woff2');font-weight:200 800;font-style:normal;font-display:swap;}
+@font-face{font-family:'Newsreader';src:url('fonts/newsreader-italic-var.woff2') format('woff2');font-weight:200 800;font-style:italic;font-display:swap;}
+@font-face{font-family:'Inter';src:url('fonts/inter-var.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}
+:root{
+  --serif:'Newsreader','Iowan Old Style',Georgia,serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:ui-monospace,'SF Mono','JetBrains Mono',Menlo,Consolas,monospace;
+  --paper:#fdfcf9;--paper-sunk:#f6f4ee;--ink:#1b1a17;--ink-soft:#4a473f;--ink-mute:#6f6b61;
+  --accent:#a4610f;--accent-soft:#c07d2a;--rule:rgba(27,26,23,0.13);
+  --step--1:clamp(0.80rem,0.78rem + 0.10vw,0.86rem);
+  --step-0:clamp(1.00rem,0.96rem + 0.20vw,1.12rem);
+  --step-1:clamp(1.20rem,1.12rem + 0.38vw,1.42rem);
+  --step-3:clamp(1.6rem,1.42rem + 0.9vw,2.2rem);
+  --step-4:clamp(1.95rem,1.6rem + 1.75vw,3.05rem);
+  --shell:68rem;--gutter:clamp(1.5rem,5vw,4rem);--measure:66ch;
+}
+@media (prefers-color-scheme:dark){:root{
+  --paper:#14140f;--paper-sunk:#1b1b16;--ink:#eae7dd;--ink-soft:#b6b1a4;--ink-mute:#8b8679;
+  --accent:#dca35c;--accent-soft:#e8bd83;--rule:rgba(234,231,221,0.16);
+}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:var(--step-0);line-height:1.65;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-synthesis-weight:none;text-rendering:optimizeLegibility;}
+::selection{background:var(--accent);color:var(--paper);}
+img{max-width:100%;height:auto;display:block;}
+a{color:var(--accent);}
+a:hover{color:var(--accent-soft);}
+.skip{position:absolute;left:-9999px;}
+.shell{max-width:var(--shell);margin-inline:auto;padding-inline:var(--gutter);}
 
-<!-- REPLACE: point this at joshtycko.com once DNS is moved off Owlstown. -->
-<link rel="canonical" href="https://joshtycko.github.io/">
-<meta property="og:title" content="Josh Tycko">
-<meta property="og:description" content="Postdoctoral fellow at Harvard Medical School. High-throughput tools to measure and manipulate human gene regulation.">
-<meta property="og:type" content="profile">
+.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 82%,transparent);backdrop-filter:blur(12px) saturate(1.2);-webkit-backdrop-filter:blur(12px) saturate(1.2);border-bottom:1px solid var(--rule);}
+.nav__inner{display:flex;align-items:baseline;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;padding-block:1.05rem;}
+.nav__brand{font-family:var(--serif);font-size:1.24rem;font-weight:500;letter-spacing:-0.015em;text-decoration:none;color:var(--ink);}
+.nav__links{display:flex;gap:clamp(1.1rem,2.4vw,2rem);font-size:var(--step--1);list-style:none;}
+.nav__links a{color:var(--ink-soft);text-decoration:none;padding-block:0.15rem;border-bottom:1px solid transparent;transition:color .14s ease,border-color .14s ease;}
+.nav__links a:hover,.nav__links a:focus-visible{color:var(--accent);}
+.nav__links a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent);}
+
+.hero{padding-block:clamp(3.5rem,9vw,7.5rem) clamp(3rem,7vw,5.5rem);}
+.hero__layout{display:grid;grid-template-columns:minmax(0,1fr);align-items:center;gap:3.5rem;}
+.eyebrow{font-family:var(--mono);font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);}
+.hero h1{font-family:var(--serif);font-weight:450;font-optical-sizing:auto;letter-spacing:-0.021em;font-size:var(--step-4);line-height:0.99;margin-top:1.25rem;max-width:20ch;text-wrap:balance;}
+.hero__lede{font-size:var(--step-1);line-height:1.5;color:var(--ink-soft);max-width:54ch;margin-top:1.75rem;text-wrap:pretty;}
+.hero__figure{margin:0;display:none;}
+@media (min-width:832px){
+  .hero__layout{grid-template-columns:minmax(0,1fr) auto;}
+  .hero__figure{display:block;}
+}
+
+.section{padding-block:clamp(3rem,6vw,5rem);border-top:1px solid var(--rule);}
+.sec-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem;}
+@media (min-width:896px){.sec-grid{grid-template-columns:12rem minmax(0,1fr);gap:3rem;}}
+.label{font-family:var(--mono);font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mute);}
+.section h2{font-family:var(--serif);font-weight:400;letter-spacing:-0.021em;line-height:1.06;font-size:var(--step-3);text-wrap:balance;}
+
+.portrait{width:clamp(7rem,12vw,9.5rem);aspect-ratio:1;border-radius:50%;object-fit:cover;filter:grayscale(1);border:1px solid var(--rule);margin-bottom:1.75rem;transition:filter .6s ease;}
+.portrait:hover{filter:grayscale(0);}
+.about p{max-width:var(--measure);text-wrap:pretty;}
+.about p + p{margin-top:1.1em;}
+
+.interests,.pubs{list-style:none;margin-top:2.25rem;}
+.interests li{padding-block:1.6rem;}
+.interests li:first-child{padding-top:0;}
+.interests li:last-child{padding-bottom:0;}
+.interests li + li{border-top:1px solid var(--rule);}
+.interests h3{font-family:var(--serif);font-weight:400;font-size:var(--step-1);line-height:1.25;letter-spacing:-0.012em;}
+.interests p{margin-top:0.5rem;color:var(--ink-soft);max-width:58ch;text-wrap:pretty;}
+
+.pubs li{padding-block:1.65rem;display:grid;grid-template-columns:minmax(0,1fr);gap:0.35rem;}
+.pubs li:first-child{padding-top:0;}
+.pubs li + li{border-top:1px solid var(--rule);}
+@media (min-width:640px){.pubs li{grid-template-columns:5.5rem minmax(0,1fr);gap:0.35rem 1.5rem;}.pubs__year{grid-row:span 3;}}
+.pubs__year{font-family:var(--mono);font-size:0.74rem;font-weight:500;letter-spacing:0.02em;color:var(--ink-mute);padding-top:0.45rem;}
+.pubs__title{font-family:var(--serif);font-size:var(--step-1);font-weight:400;line-height:1.3;letter-spacing:-0.012em;text-wrap:pretty;}
+.pubs__title a{color:inherit;text-decoration:none;transition:color .14s ease;}
+.pubs__title a:hover{color:var(--accent);}
+.pubs__authors{font-size:var(--step--1);color:var(--ink-soft);line-height:1.55;}
+.pubs__authors .self{font-weight:600;color:var(--ink);}
+.pubs__authors sup{font-size:0.7em;font-weight:500;}
+.pubs__authors em{font-family:var(--serif);color:var(--ink-soft);}
+.pubs__links{display:flex;flex-wrap:wrap;gap:0.5rem 1rem;margin-top:0.35rem;font-size:var(--step--1);}
+.pubs__links a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .14s ease;}
+.pubs__links a:hover{border-bottom-color:currentColor;}
+.more{margin-top:2.25rem;}
+.more a{font-size:var(--step--1);font-weight:500;color:var(--accent);text-decoration:none;white-space:nowrap;}
+.more a .tip{display:inline-block;transition:transform .16s ease;}
+.more a:hover .tip{transform:translateX(3px);}
+
+.footer{border-top:1px solid var(--rule);background:var(--paper-sunk);padding-block:clamp(2.5rem,5vw,4rem);margin-top:clamp(3rem,6vw,5rem);}
+.footer__inner{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap;}
+.footer__brand{font-family:var(--serif);font-size:1.24rem;}
+.footer__meta-line{font-size:0.74rem;letter-spacing:0.06em;color:var(--ink-mute);margin-top:0.6rem;}
+.footer__col{display:flex;flex-direction:column;gap:1.05rem;}
+.footer__links{display:flex;gap:1.5rem;list-style:none;font-size:var(--step--1);flex-wrap:wrap;}
+.footer__links a{color:var(--ink-soft);text-decoration:none;transition:color .14s ease;}
+.footer__links a:hover{color:var(--accent);}
+.socials{display:flex;align-items:center;gap:1.15rem;}
+.socials a{display:inline-flex;color:var(--accent);transition:color .14s ease,transform .2s ease;}
+.socials a:hover{color:var(--accent-soft);transform:translateY(-2px);}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+@keyframes riseIn{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+.rise{opacity:0;animation:riseIn .8s ease both;}
+.rise.d1{animation-delay:.05s;}.rise.d2{animation-delay:.16s;}.rise.d3{animation-delay:.30s;}.rise.d4{animation-delay:.42s;}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms !important;animation-delay:0ms !important;transition-duration:.001ms !important;}.reveal{opacity:1;transform:none;}}
+</style>
 </head>
 <body>
 
@@ -27,7 +125,7 @@
     <a class="nav__brand" href="index.html">Josh Tycko</a>
     <ul class="nav__links">
       <li><a href="index.html" aria-current="page">About</a></li>
-      <li><a href="index.html#research">Research</a></li>
+      <li><a href="#research">Research</a></li>
       <li><a href="publications.html">Publications</a></li>
     </ul>
   </div>
@@ -35,153 +133,84 @@
 
 <main id="main">
 
-  <!-- ============ HERO ============ -->
   <header class="hero shell">
     <div class="hero__layout">
-      <div class="hero__text">
-        <p class="eyebrow">Postdoctoral Fellow &middot; Harvard Medical School</p>
-
-        <h1>Measuring and manipulating human gene regulation.</h1>
-
-        <p class="lede">
-          Systematic discovery of protein function in human cells &mdash; to
-          understand gene regulation and enable genetic medicine.
-        </p>
+      <div>
+        <p class="eyebrow rise d1">Postdoctoral Fellow · Harvard Medical School</p>
+        <h1 class="rise d2">Measuring and manipulating human gene regulation.</h1>
+        <p class="hero__lede rise d3">Systematic discovery of protein function in human cells — to understand gene regulation and enable genetic medicine.</p>
       </div>
-
-      <!-- Decorative: a pooled-screen readout. Faint measurements, with the
-           enriched "hits" picked out along a rank curve. Hover lights cells. -->
-      <figure class="hero__figure" aria-hidden="true">
-        <div class="hero__grid">
-          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="hit"></i>
-          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-          <i></i><i></i><i></i><i></i><i></i><i class="hit"></i><i></i><i></i>
-          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-          <i></i><i></i><i></i><i></i><i class="hit"></i><i></i><i></i><i></i>
-          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-          <i></i><i></i><i></i><i class="hit"></i><i></i><i></i><i></i><i></i>
-          <i></i><i class="hit"></i><i class="hit"></i><i></i><i></i><i></i><i></i><i></i>
-          <i class="hit"></i><i class="hit"></i><i></i><i></i><i></i><i></i><i></i><i></i>
-        </div>
+      <figure class="hero__figure rise d4" aria-hidden="true">
+        <canvas id="secretome" width="360" height="400" style="width:360px;height:400px;display:block;"></canvas>
       </figure>
     </div>
   </header>
 
-  <!-- ============ ABOUT ============ -->
   <section class="section" id="about">
-    <div class="shell section__grid">
-      <p class="eyebrow eyebrow--mute">About</p>
-      <div class="prose">
-        <img class="portrait" src="img/portrait.jpg" alt="Josh Tycko"
-             width="600" height="600" style="margin-bottom: 1.75rem;">
-
-        <p>
-          Josh Tycko builds high-throughput technologies to measure and
-          manipulate human gene regulation. He is a postdoctoral fellow at
-          Harvard Medical School, in the labs of Michael Greenberg and Martin
-          Pollak, where he is developing pooled methods to read out the functions
-          of secreted proteins at scale.
-        </p>
-        <p>
-          He earned his Ph.D. in Genetics at Stanford University with Michael
-          Bassik and Lacra Bintu, supported by an NIH F99/K00 fellowship and the
-          NSF Graduate Research Fellowship. There he built pooled screens that
-          measure the functions of thousands of human protein domains, mapping
-          transcriptional effectors and engineering compact tools to switch genes
-          on and off.
-        </p>
-        <p>
-          He also helped co-found Stylus&nbsp;Medicine, which is developing
-          recombinase-based in&nbsp;vivo genetic medicines for cancer.
-        </p>
+    <div class="shell sec-grid">
+      <p class="label reveal">About</p>
+      <div class="about reveal">
+        <img class="portrait" src="img/portrait.jpg" alt="Josh Tycko" width="600" height="600">
+        <p>Josh Tycko builds high-throughput technologies to measure and manipulate human gene regulation. He is a postdoctoral fellow at Harvard Medical School, in the labs of Michael Greenberg and Martin Pollak, where he is developing pooled methods to read out the functions of secreted proteins at scale.</p>
+        <p>He earned his Ph.D. in Genetics at Stanford University with Michael Bassik and Lacra Bintu, supported by an NIH F99/K00 fellowship and the NSF Graduate Research Fellowship. There he built pooled screens that measure the functions of thousands of human protein domains, mapping transcriptional effectors and engineering compact tools to switch genes on and off.</p>
+        <p>He also helped co-found Stylus&nbsp;Medicine, which is developing recombinase-based in&nbsp;vivo genetic medicines for cancer.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============ RESEARCH INTERESTS ============ -->
   <section class="section" id="research">
-    <div class="shell section__grid">
-      <p class="eyebrow eyebrow--mute">Research</p>
+    <div class="shell sec-grid">
+      <p class="label reveal">Research</p>
       <div>
-        <h2>Interests</h2>
-        <ol class="interests" style="margin-top: 2.25rem;">
-          <li>
-            <div>
-              <h3>Gene and chromatin regulation</h3>
-              <p>
-                Discovering transcriptional effector domains across the human
-                proteome at scale, and engineering improved activators and
-                repressors for synthetic biology.
-              </p>
-            </div>
+        <h2 class="reveal">Interests</h2>
+        <ol class="interests">
+          <li class="reveal">
+            <h3>Gene and chromatin regulation</h3>
+            <p>Discovering transcriptional effector domains across the human proteome at scale, and engineering improved activators and repressors for synthetic biology.</p>
           </li>
-          <li>
-            <div>
-              <h3>Gene delivery</h3>
-              <p>
-                Finding recombinases and viral vectors that write large DNA
-                sequences into the human genome for durable genetic medicine.
-              </p>
-            </div>
+          <li class="reveal">
+            <h3>Gene delivery</h3>
+            <p>Finding recombinases and viral vectors that write large DNA sequences into the human genome for durable genetic medicine.</p>
           </li>
-          <li>
-            <div>
-              <h3>Genetic and epigenetic editing</h3>
-              <p>
-                Building CRISPR tools to interrogate the noncoding genome, and
-                measuring and mitigating off-target effects to make safer
-                therapies.
-              </p>
-            </div>
+          <li class="reveal">
+            <h3>Genetic and epigenetic editing</h3>
+            <p>Building CRISPR tools to interrogate the noncoding genome, and measuring and mitigating off-target effects to make safer therapies.</p>
           </li>
         </ol>
       </div>
     </div>
   </section>
 
-  <!-- ============ SELECTED PUBLICATIONS ============ -->
   <section class="section" id="selected">
-    <div class="shell section__grid">
-      <p class="eyebrow eyebrow--mute">Selected work</p>
+    <div class="shell sec-grid">
+      <p class="label reveal">Selected work</p>
       <div>
-        <h2>Publications</h2>
-
-        <ol class="pubs" style="margin-top: 2.25rem;">
-          <li>
+        <h2 class="reveal">Publications</h2>
+        <ol class="pubs">
+          <li class="reveal">
             <span class="pubs__year">2024</span>
             <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41587-024-02442-6">Development of compact transcriptional effectors using high-throughput measurements in diverse contexts</a></h3>
-            <p class="pubs__authors">
-              <span class="self">Tycko J</span><sup>*</sup>, Van MV<sup>*</sup>, Aradhana, DelRosso N, &hellip; Bintu L, Bassik MC.
-              <span class="pubs__venue">Nature Biotechnology</span>
-            </p>
+            <p class="pubs__authors"><span class="self">Tycko J</span><sup>*</sup>, Van MV<sup>*</sup>, Aradhana, DelRosso N, &hellip; Bintu L, Bassik MC. <em>Nature Biotechnology</em></p>
             <div class="pubs__links">
               <a href="https://doi.org/10.1038/s41587-024-02442-6">DOI</a>
               <a href="pdf/compact-transcriptional-effectors-2024.pdf">PDF</a>
               <a href="https://www.twistbioscience.com/blog/science/MGF-HTRecruit">Feature</a>
             </div>
           </li>
-          <li>
+          <li class="reveal">
             <span class="pubs__year">2022</span>
             <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41587-022-01494-w">Systematic discovery of recombinases for efficient integration of large DNA sequences into the human genome</a></h3>
-            <p class="pubs__authors">
-              Durrant MG<sup>*</sup>, Fanton A<sup>*</sup>, <span class="self">Tycko J</span><sup>*</sup>, &hellip; Bhatt AS, Hsu PD.
-              <span class="pubs__venue">Nature Biotechnology</span>
-            </p>
+            <p class="pubs__authors">Durrant MG<sup>*</sup>, Fanton A<sup>*</sup>, <span class="self">Tycko J</span><sup>*</sup>, &hellip; Bhatt AS, Hsu PD. <em>Nature Biotechnology</em></p>
             <div class="pubs__links">
               <a href="https://doi.org/10.1038/s41587-022-01494-w">DOI</a>
               <a href="pdf/recombinases-2022.pdf">PDF</a>
               <a href="https://doi.org/10.1038/s41587-022-01600-y">News &amp; Views</a>
             </div>
           </li>
-          <li>
+          <li class="reveal">
             <span class="pubs__year">2020</span>
             <h3 class="pubs__title"><a href="https://doi.org/10.1016/j.cell.2020.11.024">High-throughput discovery and characterization of human transcriptional effectors</a></h3>
-            <p class="pubs__authors">
-              <span class="self">Tycko J</span>, DelRosso N, Hess GT, &hellip; Bassik MC, Bintu L.
-              <span class="pubs__venue">Cell</span>
-            </p>
+            <p class="pubs__authors"><span class="self">Tycko J</span>, DelRosso N, Hess GT, &hellip; Bassik MC, Bintu L. <em>Cell</em></p>
             <div class="pubs__links">
               <a href="https://doi.org/10.1016/j.cell.2020.11.024">DOI</a>
               <a href="pdf/human-transcriptional-effectors-2020.pdf">PDF</a>
@@ -189,10 +218,7 @@
             </div>
           </li>
         </ol>
-
-        <p style="margin-top: 2.25rem;">
-          <a class="arrow" href="publications.html">All publications</a>
-        </p>
+        <p class="more reveal"><a href="publications.html">All publications<span class="tip"> →</span></a></p>
       </div>
     </div>
   </section>
@@ -202,49 +228,150 @@
 <footer class="footer">
   <div class="shell footer__inner">
     <div>
-      <p style="font-family: var(--serif); font-size: 1.24rem;">Josh Tycko</p>
-      <p class="footer__fine" style="margin-top: 0.6rem;">
-        Harvard Medical School &middot; Boston
-      </p>
+      <p class="footer__brand">Josh Tycko</p>
+      <p class="footer__meta-line">Harvard Medical School · Boston</p>
     </div>
-    <div class="footer__meta">
+    <div class="footer__col">
       <ul class="footer__links">
-        <li><a href="index.html#about">About</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="publications.html">Publications</a></li>
       </ul>
-      <div class="footer__icons">
-        <a class="icon-link" href="mailto:joshtycko@hms.harvard.edu" aria-label="Email" title="Email">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-               stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="3" y="5.5" width="18" height="13" rx="1.5"/>
-            <path d="M4 7.2l8 5.8 8-5.8"/>
-          </svg>
-        </a>
-        <a class="icon-link" href="https://scholar.google.com/citations?user=_H0TWwQAAAAJ" aria-label="Google Scholar" title="Google Scholar">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-               stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 5L2.8 9.6l9.2 4.6 9.2-4.6L12 5z"/>
-            <path d="M6.8 12.2v3c0 1.5 2.3 2.9 5.2 2.9s5.2-1.4 5.2-2.9v-3"/>
-            <path d="M21.2 9.6v4.5"/>
-          </svg>
-        </a>
-        <a class="icon-link" href="https://x.com/joshtycko" aria-label="X" title="X">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-          </svg>
-        </a>
-        <a class="icon-link" href="https://orcid.org/0000-0002-4108-0575" aria-label="ORCID" title="ORCID">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <circle cx="12" cy="12" r="12"/>
-            <text x="12" y="16.1" text-anchor="middle"
-                  font-family="Inter, system-ui, sans-serif" font-size="10.5"
-                  font-weight="600" fill="var(--paper)">iD</text>
-          </svg>
-        </a>
+      <div class="socials">
+        <a href="mailto:joshtycko@hms.harvard.edu" aria-label="Email" title="Email"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5"></rect><path d="M4 7.2l8 5.8 8-5.8"></path></svg></a>
+        <a href="https://scholar.google.com/citations?user=_H0TWwQAAAAJ" aria-label="Google Scholar" title="Google Scholar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5L2.8 9.6l9.2 4.6 9.2-4.6L12 5z"></path><path d="M6.8 12.2v3c0 1.5 2.3 2.9 5.2 2.9s5.2-1.4 5.2-2.9v-3"></path><path d="M21.2 9.6v4.5"></path></svg></a>
+        <a href="https://x.com/joshtycko" aria-label="X" title="X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+        <a href="https://orcid.org/0000-0002-4108-0575" aria-label="ORCID" title="ORCID"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="12"></circle><text x="12" y="16.1" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10.5" font-weight="600" fill="var(--paper)">iD</text></svg></a>
       </div>
     </div>
   </div>
 </footer>
 
+<script>
+(function(){
+  // Scroll reveals
+  var els = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  var reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if (reduce) { els.forEach(function(el){ el.classList.add('in'); }); }
+  else {
+    var pending = new Set(els);
+    function check(){
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      pending.forEach(function(el){
+        var r = el.getBoundingClientRect();
+        if (r.top < vh*0.92 && r.bottom > 0){ el.classList.add('in'); pending.delete(el); }
+      });
+      if (!pending.size){ window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll); }
+    }
+    var ticking = false;
+    function onScroll(){ if(!ticking){ ticking = true; requestAnimationFrame(function(){ ticking = false; check(); }); } }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll);
+    check(); setTimeout(check, 400);
+  }
+
+  // Secretome hero: ligands drift in from outside, dock on receptors, and
+  // occasionally fire a signal inward to the nucleus. Nothing crosses the membrane.
+  var cv = document.getElementById('secretome');
+  if (!cv || !cv.getContext) return;
+  var W = 360, H = 400, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W*dpr; cv.height = H*dpr;
+  var ctx = cv.getContext('2d'); ctx.scale(dpr, dpr);
+  var css = getComputedStyle(document.body);
+  var INK = (css.getPropertyValue('--ink').trim()) || '#1b1a17';
+  var ACC = (css.getPropertyValue('--accent').trim()) || '#a4610f';
+  function hexA(hex, a){ hex = (hex||'').replace('#',''); if(hex.length===3) hex = hex.split('').map(function(c){return c+c;}).join(''); var n = parseInt(hex||'000000',16); return 'rgba('+((n>>16)&255)+','+((n>>8)&255)+','+(n&255)+','+a+')'; }
+  var rand = function(a,b){ return a + Math.random()*(b-a); };
+  var ease = function(p){ return p<0.5 ? 2*p*p : 1-Math.pow(-2*p+2,2)/2; };
+
+  var nucleus = { x:W*0.82, y:H*0.5, r:44, glow:0 };
+  function membX(y,t){ return W*0.58 + Math.sin(y/H*Math.PI*1.7 + t*0.0006)*9; }
+  var RN = 7, receptors = [];
+  for (var i=0;i<RN;i++) receptors.push({ y:H*0.13 + (H*0.74)*(i/(RN-1)), occ:false, res:false });
+
+  function mkLig(){ return { x:rand(-25,W*0.12), y:rand(H*0.05,H*0.95), vx:rand(0.2,0.7), vy:rand(-0.3,0.3), state:'free', tgt:null, bt:0, dur:rand(2600,5200), fired:false, wob:Math.random()*6.28, a:0 }; }
+  var N = 46, ligs = [];
+  for (var k=0;k<N;k++){ var l = mkLig(); l.x = rand(-60,W*0.42); l.a = 1; ligs.push(l); }
+  var signals = [];
+  function freeReceptor(y){ var best=null, bd=1e9; receptors.forEach(function(r){ if(!r.res){ var d=Math.abs(r.y-y); if(d<bd){bd=d;best=r;} } }); return best; }
+
+  var last = performance.now(), raf;
+  function step(now){
+    var dt = Math.min(now-last, 50); last = now;
+    ctx.clearRect(0,0,W,H);
+
+    var fade = ctx.createLinearGradient(0,0,0,H);
+    fade.addColorStop(0, hexA(INK,0)); fade.addColorStop(0.16, hexA(INK,1));
+    fade.addColorStop(0.84, hexA(INK,1)); fade.addColorStop(1, hexA(INK,0));
+
+    var cellFill = ctx.createLinearGradient(W*0.55,0,W,0);
+    cellFill.addColorStop(0, hexA(INK,0.06)); cellFill.addColorStop(1, hexA(INK,0));
+    ctx.beginPath(); ctx.moveTo(W,0);
+    for (var y=0;y<=H;y+=8) ctx.lineTo(membX(y,now),y);
+    ctx.lineTo(W,H); ctx.closePath(); ctx.fillStyle = cellFill; ctx.fill();
+
+    ctx.save(); ctx.globalAlpha = 0.42;
+    ctx.beginPath(); ctx.moveTo(membX(0,now),0);
+    for (var y2=0;y2<=H;y2+=6) ctx.lineTo(membX(y2,now),y2);
+    ctx.strokeStyle = fade; ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
+    receptors.forEach(function(r){ var mx=membX(r.y,now); ctx.beginPath(); ctx.arc(mx,r.y,3.2,0,6.29); ctx.strokeStyle = r.occ?hexA(ACC,0.7):hexA(INK,0.42); ctx.lineWidth=1.4; ctx.stroke(); });
+
+    if (nucleus.glow>0.01){ ctx.beginPath(); ctx.arc(nucleus.x,nucleus.y,nucleus.r+8+nucleus.glow*12,0,6.29); ctx.fillStyle=hexA(ACC,0.11*nucleus.glow); ctx.fill(); }
+    ctx.beginPath(); ctx.arc(nucleus.x,nucleus.y,nucleus.r,0,6.29); ctx.fillStyle=hexA(INK,0.06); ctx.fill();
+    ctx.strokeStyle = nucleus.glow>0.05?hexA(ACC,0.5+0.5*nucleus.glow):hexA(INK,0.4); ctx.lineWidth=1.5; ctx.stroke();
+    nucleus.glow *= 0.95;
+
+    for (var s2=signals.length-1;s2>=0;s2--){
+      var s = signals[s2]; s.t += dt;
+      var p = Math.min(s.t/s.dur,1), e = ease(p);
+      var cx=(s.x+nucleus.x)/2, cy=(s.y+nucleus.y)/2-40;
+      var bx=(1-e)*(1-e)*s.x+2*(1-e)*e*cx+e*e*nucleus.x;
+      var by=(1-e)*(1-e)*s.y+2*(1-e)*e*cy+e*e*nucleus.y;
+      var pe=ease(Math.max(p-0.12,0));
+      var tx=(1-pe)*(1-pe)*s.x+2*(1-pe)*pe*cx+pe*pe*nucleus.x;
+      var ty=(1-pe)*(1-pe)*s.y+2*(1-pe)*pe*cy+pe*pe*nucleus.y;
+      ctx.beginPath(); ctx.moveTo(tx,ty); ctx.lineTo(bx,by); ctx.strokeStyle=hexA(ACC,0.5); ctx.lineWidth=2; ctx.lineCap='round'; ctx.stroke();
+      ctx.beginPath(); ctx.arc(bx,by,3,0,6.29); ctx.fillStyle=hexA(ACC,0.95); ctx.shadowColor=hexA(ACC,0.8); ctx.shadowBlur=8; ctx.fill(); ctx.shadowBlur=0;
+      if (p>=1){ nucleus.glow=1; signals.splice(s2,1); }
+    }
+
+    ligs.forEach(function(l){
+      l.a = Math.min(l.a+0.02,1);
+      if (l.state==='free'){
+        if (!l.tgt && l.x>W*0.05){ var r=freeReceptor(l.y); if(r){ r.res=true; l.tgt=r; } }
+        if (l.tgt){
+          var mx=membX(l.tgt.y,now), dx=mx-l.x, dy=l.tgt.y-l.y, d=Math.hypot(dx,dy)||1;
+          l.vx += ((dx/d*1.1)-l.vx)*0.05; l.vy += ((dy/d*1.1)-l.vy)*0.05;
+          if (d<5){ l.state='bound'; l.tgt.occ=true; l.bt=now; l.vx=0; l.vy=0; }
+        } else { l.wob += 0.05; l.vx += (0.5-l.vx)*0.02; l.vy += Math.sin(l.wob)*0.06; }
+        l.x += l.vx; l.y += l.vy;
+      } else if (l.state==='bound'){
+        var mxb=membX(l.tgt.y,now);
+        l.x = mxb + Math.sin(now*0.005+l.wob)*0.8;
+        l.y = l.tgt.y + Math.cos(now*0.005+l.wob)*0.8;
+        if (!l.fired && now-l.bt>l.dur*0.35){ l.fired=true; signals.push({x:mxb,y:l.tgt.y,t:0,dur:900}); }
+        if (now-l.bt>l.dur){ l.tgt.occ=false; l.tgt.res=false; l.state='leaving'; l.tgt=null; l.vx=rand(-1.4,-0.6); l.vy=rand(-0.5,0.5); }
+      } else {
+        l.x += l.vx; l.y += l.vy; l.a -= 0.012;
+        if (l.a<=0){ Object.assign(l, mkLig()); }
+      }
+      if (l.state!=='bound'){ var bar=membX(l.y,now)-5; if (l.x>bar){ l.x=bar; if(l.vx>0) l.vx=-Math.abs(l.vx)*0.6-0.15; } }
+      if (l.state==='bound'){
+        ctx.beginPath(); ctx.arc(l.x,l.y,6,0,6.29); ctx.fillStyle=hexA(ACC,0.14); ctx.fill();
+        ctx.beginPath(); ctx.arc(l.x,l.y,3.4,0,6.29); ctx.fillStyle=hexA(ACC,0.95); ctx.fill();
+      } else {
+        ctx.beginPath(); ctx.arc(l.x,l.y,2.8,0,6.29); ctx.fillStyle=hexA(INK,0.4*l.a); ctx.fill();
+      }
+    });
+
+    raf = requestAnimationFrame(step);
+  }
+  if (window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+    receptors.forEach(function(r,i){ if(i%2===0){ r.occ=true; r.res=true; } });
+    step(performance.now()); if (raf) cancelAnimationFrame(raf);
+  } else {
+    raf = requestAnimationFrame(step);
+  }
+})();
+</script>
 </body>
 </html>
