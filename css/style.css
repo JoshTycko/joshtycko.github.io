@@ -801,6 +801,7 @@ a:focus-visible {
 
 /* Active chip. */
 #pf-all:checked ~ .pubfilter__chips label[for='pf-all'],
+#pf-selected:checked ~ .pubfilter__chips label[for='pf-selected'],
 #pf-research:checked ~ .pubfilter__chips label[for='pf-research'],
 #pf-review:checked ~ .pubfilter__chips label[for='pf-review'],
 #pf-protocol:checked ~ .pubfilter__chips label[for='pf-protocol'],
@@ -812,6 +813,7 @@ a:focus-visible {
 
 /* Keyboard focus ring on the corresponding chip. */
 #pf-all:focus-visible ~ .pubfilter__chips label[for='pf-all'],
+#pf-selected:focus-visible ~ .pubfilter__chips label[for='pf-selected'],
 #pf-research:focus-visible ~ .pubfilter__chips label[for='pf-research'],
 #pf-review:focus-visible ~ .pubfilter__chips label[for='pf-review'],
 #pf-protocol:focus-visible ~ .pubfilter__chips label[for='pf-protocol'],
@@ -821,6 +823,7 @@ a:focus-visible {
 }
 
 /* Hide non-matching entries. */
+#pf-selected:checked ~ .pubs > li:not([data-selected]),
 #pf-research:checked ~ .pubs > li:not([data-type='research']),
 #pf-review:checked ~ .pubs > li:not([data-type='review']),
 #pf-protocol:checked ~ .pubs > li:not([data-type='protocol']),
@@ -835,6 +838,7 @@ a:focus-visible {
 }
 
 /* Hide the countdown numerals unless viewing everything. */
+#pf-selected:checked ~ .pubs .pubs__num,
 #pf-research:checked ~ .pubs .pubs__num,
 #pf-review:checked ~ .pubs .pubs__num,
 #pf-protocol:checked ~ .pubs .pubs__num,

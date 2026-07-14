@@ -39,81 +39,9 @@
   <header class="hero shell">
     <p class="eyebrow">Full list</p>
     <h1>Publications</h1>
-    <p class="lede">A selected few first, then everything by year.</p>
+    <p class="lede">Everything by year — filter by type, or view a selected few.</p>
     <p class="pubs-legend"><sup>*</sup>&#8201;equal contribution &nbsp; <sup>#</sup>&#8201;co-corresponding author</p>
   </header>
-
-  <!-- ============ SELECTED ============ -->
-  <section class="section">
-    <div class="shell section__grid">
-      <p class="eyebrow eyebrow--mute">Selected</p>
-      <ol class="pubs">
-        <li>
-          <span class="pubs__year">2024</span>
-          <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41587-024-02442-6">Development of compact transcriptional effectors using high-throughput measurements in diverse contexts</a></h3>
-          <p class="pubs__authors">
-            <span class="self">Tycko J</span><sup>*</sup>, Van MV<sup>*</sup>, Aradhana, DelRosso N, &hellip; Bintu L, Bassik MC.
-            <span class="pubs__venue">Nature Biotechnology</span>
-          </p>
-          <div class="pubs__links">
-            <a href="https://doi.org/10.1038/s41587-024-02442-6">DOI</a>
-            <a href="pdf/compact-transcriptional-effectors-2024.pdf">PDF</a>
-            <a href="https://www.twistbioscience.com/blog/science/MGF-HTRecruit">Feature</a>
-          </div>
-        </li>
-        <li>
-          <span class="pubs__year">2024</span>
-          <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41592-024-02216-7">Multicenter integrated analysis of noncoding CRISPRi screens</a></h3>
-          <p class="pubs__authors">
-            Yao D<sup>*</sup>, <span class="self">Tycko J</span><sup>*#</sup>, Oh JW<sup>*</sup>, &hellip; Bassik MC, Reilly SK<sup>#</sup>.
-            <span class="pubs__venue">Nature Methods</span>
-          </p>
-          <div class="pubs__links">
-            <a href="https://doi.org/10.1038/s41592-024-02216-7">DOI</a>
-            <a href="pdf/multicenter-noncoding-crispri-2024.pdf">PDF</a>
-          </div>
-        </li>
-        <li>
-          <span class="pubs__year">2022</span>
-          <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41587-022-01494-w">Systematic discovery of recombinases for efficient integration of large DNA sequences into the human genome</a></h3>
-          <p class="pubs__authors">
-            Durrant MG<sup>*</sup>, Fanton A<sup>*</sup>, <span class="self">Tycko J</span><sup>*</sup>, &hellip; Bhatt AS, Hsu PD.
-            <span class="pubs__venue">Nature Biotechnology</span>
-          </p>
-          <div class="pubs__links">
-            <a href="https://doi.org/10.1038/s41587-022-01494-w">DOI</a>
-            <a href="pdf/recombinases-2022.pdf">PDF</a>
-            <a href="https://doi.org/10.1038/s41587-022-01600-y">News &amp; Views</a>
-          </div>
-        </li>
-        <li>
-          <span class="pubs__year">2020</span>
-          <h3 class="pubs__title"><a href="https://doi.org/10.1016/j.cell.2020.11.024">High-throughput discovery and characterization of human transcriptional effectors</a></h3>
-          <p class="pubs__authors">
-            <span class="self">Tycko J</span>, DelRosso N, Hess GT, &hellip; Bassik MC, Bintu L.
-            <span class="pubs__venue">Cell</span>
-          </p>
-          <div class="pubs__links">
-            <a href="https://doi.org/10.1016/j.cell.2020.11.024">DOI</a>
-            <a href="pdf/human-transcriptional-effectors-2020.pdf">PDF</a>
-            <a href="https://prelights.biologists.com/highlights/high-throughput-discovery-and-characterization-of-human-transcriptional-effectors/">preLights</a>
-          </div>
-        </li>
-        <li>
-          <span class="pubs__year">2019</span>
-          <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41467-019-11955-7">Mitigation of off-target toxicity in CRISPR-Cas9 screens for essential non-coding elements</a></h3>
-          <p class="pubs__authors">
-            <span class="self">Tycko J</span><sup>*</sup>, Wainberg M<sup>*</sup>, Marinov GK<sup>*</sup>, &hellip; Kundaje A, Bassik MC.
-            <span class="pubs__venue">Nature Communications</span>
-          </p>
-          <div class="pubs__links">
-            <a href="https://doi.org/10.1038/s41467-019-11955-7">DOI</a>
-            <a href="pdf/mitigation-offtarget-2019.pdf">PDF</a>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
 
   <!-- ============ ALL, NEWEST FIRST ============ -->
   <section class="section">
@@ -122,12 +50,14 @@
       <div class="pubfilter">
         <!-- CSS-only type filter: radios drive visibility of the list below. -->
         <input class="pubfilter__radio" type="radio" name="pubtype" id="pf-all" checked>
+        <input class="pubfilter__radio" type="radio" name="pubtype" id="pf-selected">
         <input class="pubfilter__radio" type="radio" name="pubtype" id="pf-research">
         <input class="pubfilter__radio" type="radio" name="pubtype" id="pf-review">
         <input class="pubfilter__radio" type="radio" name="pubtype" id="pf-protocol">
         <input class="pubfilter__radio" type="radio" name="pubtype" id="pf-preprint">
         <div class="pubfilter__chips">
           <label for="pf-all">All</label>
+          <label for="pf-selected">Selected</label>
           <label for="pf-research">Research</label>
           <label for="pf-review">Reviews</label>
           <label for="pf-protocol">Protocols</label>
@@ -211,7 +141,7 @@
               <a href="https://doi.org/10.1101/2025.09.21.676939">bioRxiv</a>
             </div>
           </li>
-          <li data-type="research">
+          <li data-type="research" data-selected>
             <span class="pubs__year"><span class="pubs__num">25</span>2024</span>
             <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41587-024-02442-6">Development of compact transcriptional effectors using high-throughput measurements in diverse contexts</a></h3>
             <p class="pubs__authors">
@@ -225,7 +155,7 @@
               <a href="https://www.twistbioscience.com/blog/science/MGF-HTRecruit">Feature</a>
             </div>
           </li>
-          <li data-type="research">
+          <li data-type="research" data-selected>
             <span class="pubs__year"><span class="pubs__num">24</span>2024</span>
             <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41592-024-02216-7">Multicenter integrated analysis of noncoding CRISPRi screens</a></h3>
             <p class="pubs__authors">
@@ -340,7 +270,7 @@
               <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10120127/">PDF</a>
             </div>
           </li>
-          <li data-type="research">
+          <li data-type="research" data-selected>
             <span class="pubs__year"><span class="pubs__num">15</span>2022</span>
             <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41587-022-01494-w">Systematic discovery of recombinases for efficient integration of large DNA sequences into the human genome</a></h3>
             <p class="pubs__authors">
@@ -393,7 +323,7 @@
               <a href="pdf/aav-rsv-antibody-2021.pdf">PDF</a>
             </div>
           </li>
-          <li data-type="research">
+          <li data-type="research" data-selected>
             <span class="pubs__year"><span class="pubs__num">11</span>2020</span>
             <h3 class="pubs__title"><a href="https://doi.org/10.1016/j.cell.2020.11.024">High-throughput discovery and characterization of human transcriptional effectors</a></h3>
             <p class="pubs__authors">
@@ -407,7 +337,7 @@
               <a href="https://prelights.biologists.com/highlights/high-throughput-discovery-and-characterization-of-human-transcriptional-effectors/">preLights</a>
             </div>
           </li>
-          <li data-type="research">
+          <li data-type="research" data-selected>
             <span class="pubs__year"><span class="pubs__num">10</span>2019</span>
             <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41467-019-11955-7">Mitigation of off-target toxicity in CRISPR-Cas9 screens for essential non-coding elements</a></h3>
             <p class="pubs__authors">
