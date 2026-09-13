@@ -14,3 +14,9 @@ typeset publisher PDF is technically the publisher's.
 
 Until a paper's PDF is added here, its "PDF" link falls back to the free full
 text on PubMed Central.
+
+**Non-peer-reviewed items** (the "Other writing" section) are self-archived here
+because they have no stable public home: `epigenetic-therapy-risks-2013.pdf` and
+`site-specific-methylases-2014.pdf` are Josh's own undergraduate journal articles,
+copied from `Credentials/My papers/Non peer reviewed/`. The dissertation is not
+hosted here, it is 30 MB and the Stanford Digital Repository serves it.
