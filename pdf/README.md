@@ -20,3 +20,9 @@ because they have no stable public home: `epigenetic-therapy-risks-2013.pdf` and
 `site-specific-methylases-2014.pdf` are Josh's own undergraduate journal articles,
 copied from `Credentials/My papers/Non peer reviewed/`. The dissertation is not
 hosted here, it is 30 MB and the Stanford Digital Repository serves it.
+`expanding-crispr-toolbox-2017.pdf` is Josh's co-first-author Nature Methods
+wallchart (c 2017 Nature America, sponsored by Dharmacon). The URL printed on the
+poster itself, nature.com/nmeth/focus/crisprtoolbox, now returns 404, so this
+self-archived copy is the only remaining public one. Rebuilt from the 8.4 MB
+original with pypdf because the pre-existing "compressed" copy had a broken xref
+table.
