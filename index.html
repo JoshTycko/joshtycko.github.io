@@ -82,7 +82,7 @@ a:hover{color:var(--accent-soft);}
 .pubs li{padding-block:1.65rem;display:grid;grid-template-columns:minmax(0,1fr);gap:0.35rem;}
 .pubs li:first-child{padding-top:0;}
 .pubs li + li{border-top:1px solid var(--rule);}
-@media (min-width:640px){.pubs li{grid-template-columns:5.5rem minmax(0,1fr);gap:0.35rem 1.5rem;}.pubs__year{grid-row:span 3;}}
+@media (min-width:640px){.pubs li{grid-template-columns:5.5rem minmax(0,1fr);gap:0.35rem 1.5rem;}.pubs__year{grid-column:1;grid-row:1;}.pubs li > :not(.pubs__year){grid-column:2;}}
 .pubs__year{font-family:var(--mono);font-size:0.74rem;font-weight:500;letter-spacing:0.02em;color:var(--ink-mute);padding-top:0.45rem;}
 .pubs__title{font-family:var(--serif);font-size:var(--step-1);font-weight:400;line-height:1.3;letter-spacing:-0.012em;text-wrap:pretty;}
 .pubs__title a{color:inherit;text-decoration:none;transition:color .14s ease;}
@@ -91,6 +91,8 @@ a:hover{color:var(--accent-soft);}
 .pubs__authors .self{font-weight:600;color:var(--ink);}
 .pubs__authors sup{font-size:0.7em;font-weight:500;}
 .pubs__authors em{font-family:var(--serif);color:var(--ink-soft);}
+.pubs__note{font-size:0.78rem;line-height:1.5;color:var(--ink-mute);margin-top:0.15rem;}
+.pubs__note sup{font-size:0.8em;font-weight:500;}
 .pubs__links{display:flex;flex-wrap:wrap;gap:0.5rem 1rem;margin-top:0.35rem;font-size:var(--step--1);}
 .pubs__links a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .14s ease;}
 .pubs__links a:hover{border-bottom-color:currentColor;}
@@ -201,6 +203,7 @@ a:hover{color:var(--accent-soft);}
             <span class="pubs__year">2024</span>
             <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41592-024-02216-7">Multicenter integrated analysis of noncoding CRISPRi screens</a></h3>
             <p class="pubs__authors">Yao D<sup>*</sup>, <span class="self">Tycko J</span><sup>*#</sup>, Oh JW<sup>*</sup>, &hellip; Bassik MC, Reilly SK<sup>#</sup>. <em>Nature Methods</em></p>
+            <p class="pubs__note"><sup>*</sup>&#8201;Co-first authors can be reported in any order</p>
             <div class="pubs__links">
               <a href="https://doi.org/10.1038/s41592-024-02216-7">DOI</a>
               <a href="pdf/multicenter-noncoding-crispri-2024.pdf">PDF</a>
@@ -210,6 +213,7 @@ a:hover{color:var(--accent-soft);}
             <span class="pubs__year">2022</span>
             <h3 class="pubs__title"><a href="https://doi.org/10.1038/s41587-022-01494-w">Systematic discovery of recombinases for efficient integration of large DNA sequences into the human genome</a></h3>
             <p class="pubs__authors">Durrant MG<sup>*</sup>, Fanton A<sup>*</sup>, <span class="self">Tycko J</span><sup>*</sup>, &hellip; Bhatt AS, Hsu PD. <em>Nature Biotechnology</em></p>
+            <p class="pubs__note"><sup>*</sup>&#8201;Co-first authors listed alphabetically</p>
             <div class="pubs__links">
               <a href="https://doi.org/10.1038/s41587-022-01494-w">DOI</a>
               <a href="pdf/recombinases-2022.pdf">PDF</a>

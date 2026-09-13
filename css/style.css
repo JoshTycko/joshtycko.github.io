@@ -428,8 +428,15 @@ a:focus-visible {
     grid-template-columns: 5.5rem minmax(0, 1fr);
     gap: 0.35rem 1.5rem;
   }
+  /* Year pinned to the left column; every other child stacks in the right one,
+     however many there are. A fixed row span breaks as soon as an entry gains a
+     line, such as an author-order note. */
   .pubs__year {
-    grid-row: span 3;
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .pubs > li > :not(.pubs__year) {
+    grid-column: 2;
   }
 }
 
@@ -959,4 +966,19 @@ a:focus-visible {
   .section__label {
     display: none;
   }
+}
+
+/* Author-order footnote under a publication's author list, e.g. when co-first
+   authors are listed alphabetically. Subtle, but not decoration: it changes how
+   the paper should be cited. */
+.pubs__note {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--ink-mute);
+  margin-top: 0.15rem;
+}
+
+.pubs__note sup {
+  font-size: 0.8em;
+  font-weight: 500;
 }
