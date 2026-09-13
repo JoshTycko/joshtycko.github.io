@@ -881,3 +881,82 @@ a:focus-visible {
     view-transition-name: active-nav-link;
   }
 }
+
+/* ---------- Publications page: sticky section index ----------
+   Three stacked sections (Publications / Patents / Other writing) with an index
+   in the left rail that tracks the one you are reading. Below 56rem the rail
+   becomes a strip under the page header and each section carries its own label. */
+.pubpage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.pubpage__main > .section {
+  scroll-margin-top: 4.5rem;
+}
+
+.secnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  padding-bottom: 1.25rem;
+}
+
+.secnav__link {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-decoration: none;
+  transition: color 140ms ease;
+}
+
+.secnav__link:hover,
+.secnav__link:focus-visible {
+  color: var(--accent);
+}
+
+.secnav__link.is-current {
+  color: var(--ink);
+}
+
+@media (min-width: 56rem) {
+  .pubpage {
+    grid-template-columns: 12rem minmax(0, 1fr);
+    gap: 3rem;
+  }
+  .pubpage__aside {
+    padding-top: clamp(3rem, 6vw, 5rem);
+  }
+  .secnav {
+    position: sticky;
+    top: 5.5rem;
+    display: grid;
+    gap: 0.9rem;
+    padding-bottom: 0;
+  }
+  .secnav__link {
+    position: relative;
+    padding-left: 0.95rem;
+  }
+  .secnav__link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.44em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--rule-strong);
+    transition: background 140ms ease;
+  }
+  .secnav__link.is-current::before {
+    background: var(--accent);
+  }
+  /* The rail labels the sections on desktop, so the in-section label is redundant. */
+  .section__label {
+    display: none;
+  }
+}

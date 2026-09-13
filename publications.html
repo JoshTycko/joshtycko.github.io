@@ -39,14 +39,21 @@
   <header class="hero shell">
     <p class="eyebrow">Full list</p>
     <h1>Publications</h1>
-    <p class="lede">Everything by year — filter by type, or view a selected few.</p>
+    <p class="lede">Everything by year. Filter by type, or view a selected few.</p>
     <p class="pubs-legend"><sup>*</sup>&#8201;equal contribution &nbsp; <sup>#</sup>&#8201;co-corresponding author</p>
   </header>
 
-  <!-- ============ ALL, NEWEST FIRST ============ -->
-  <section class="section">
-    <div class="shell section__grid">
-      <p class="eyebrow eyebrow--mute">All work</p>
+  <div class="shell pubpage">
+    <aside class="pubpage__aside">
+      <nav class="secnav" aria-label="Sections on this page">
+        <a class="secnav__link" href="#publications">Publications</a>
+        <a class="secnav__link" href="#patents">Patents</a>
+        <a class="secnav__link" href="#other">Other writing</a>
+      </nav>
+    </aside>
+    <div class="pubpage__main">
+      <section class="section" id="publications">
+        <p class="eyebrow eyebrow--mute section__label">Publications</p>
       <div class="pubfilter">
         <!-- CSS-only type filter: radios drive visibility of the list below. -->
         <input class="pubfilter__radio" type="radio" name="pubtype" id="pf-all" checked>
@@ -473,65 +480,9 @@
           <a class="arrow" href="https://scholar.google.com/citations?user=_H0TWwQAAAAJ">Google Scholar</a>
         </p>
       </div>
-    </div>
-  </section>
-
-  <!-- ============ OTHER WRITING ============ -->
-  <section class="section">
-    <div class="shell section__grid">
-      <p class="eyebrow eyebrow--mute">Other writing</p>
-      <div>
-        <p class="pubs-legend">Projects whose only written record is not a peer-reviewed paper, plus my dissertation.</p>
-        <ol class="pubs">
-          <li>
-            <span class="pubs__year">2022</span>
-            <h3 class="pubs__title"><a href="https://purl.stanford.edu/yf501km3807">Systematic discovery of transcriptional effectors and integrases in human cells</a></h3>
-            <p class="pubs__authors"><span class="self">Tycko J</span>. <span class="pubs__venue">Ph.D. dissertation, Stanford University</span></p>
-            <div class="pubs__links">
-              <a href="https://purl.stanford.edu/yf501km3807">Stanford Digital Repository</a>
-            </div>
-          </li>
-          <li>
-            <span class="pubs__year">2017</span>
-            <h3 class="pubs__title"><a href="pdf/expanding-crispr-toolbox-2017.pdf">The expanding CRISPR toolbox</a></h3>
-            <p class="pubs__authors"><span class="self">Tycko J</span><sup>*</sup>, Hess GT<sup>*</sup>, Jeng EE<sup>*</sup>, Dubreuil M<sup>*</sup>, Bassik MC. <span class="pubs__venue">Nature Methods</span>, poster</p>
-            <div class="pubs__links">
-              <a href="pdf/expanding-crispr-toolbox-2017.pdf">PDF</a>
-            </div>
-          </li>
-          <li>
-            <span class="pubs__year">2016</span>
-            <h3 class="pubs__title"><a href="https://doi.org/10.1016/S1525-0016(16)33126-4">Screening S. aureus CRISPR-Cas9 paired-guide RNAs for efficient targeted deletion in Duchenne muscular dystrophy</a></h3>
-            <p class="pubs__authors"><span class="self">Tycko J</span>, Huston N, Robinson-Hamm JN, Wilson C, Gersbach CA, Hsu PD, Bumcrot D. <span class="pubs__venue">Molecular Therapy</span>, meeting abstract</p>
-            <div class="pubs__links">
-              <a href="https://doi.org/10.1016/S1525-0016(16)33126-4">DOI</a>
-            </div>
-          </li>
-          <li>
-            <span class="pubs__year">2014</span>
-            <h3 class="pubs__title"><a href="pdf/site-specific-methylases-2014.pdf">Development of a single-plasmid system for screening site-specific DNA methylases</a></h3>
-            <p class="pubs__authors"><span class="self">Tycko J</span>, Cabrera D, Fields D, Kaptur B, Charawi M, Glantz S, Magaraci MS, Veerakumar A, Miller JS, Chow BY. <span class="pubs__venue">PennScience</span>, undergraduate research journal</p>
-            <div class="pubs__links">
-              <a href="pdf/site-specific-methylases-2014.pdf">PDF</a>
-            </div>
-          </li>
-          <li>
-            <span class="pubs__year">2013</span>
-            <h3 class="pubs__title"><a href="pdf/epigenetic-therapy-risks-2013.pdf">The potential of epigenetic therapy and the need for elucidation of risks</a></h3>
-            <p class="pubs__authors"><span class="self">Tycko J</span>, Fields D, Cabrera D, Charawi M, Kaptur B. <span class="pubs__venue">Penn Bioethics Journal</span>, undergraduate journal</p>
-            <div class="pubs__links">
-              <a href="pdf/epigenetic-therapy-risks-2013.pdf">PDF</a>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PATENTS ============ -->
-  <section class="section">
-    <div class="shell section__grid">
-      <p class="eyebrow eyebrow--mute">Patents</p>
+      </section>
+      <section class="section" id="patents">
+        <p class="eyebrow eyebrow--mute section__label">Patents</p>
       <div>
         <ol class="pubs">
           <li>
@@ -566,8 +517,65 @@
           </li>
         </ol>
       </div>
+      </section>
+      <section class="section" id="other">
+        <p class="eyebrow eyebrow--mute section__label">Other writing</p>
+      <div>
+        <ol class="pubs">
+          <li>
+            <span class="pubs__year">2022</span>
+            <h3 class="pubs__title"><a href="https://purl.stanford.edu/yf501km3807">Systematic discovery of transcriptional effectors and integrases in human cells</a></h3>
+            <p class="pubs__authors"><span class="self">Tycko J</span>. <span class="pubs__venue">Ph.D. dissertation, Stanford University</span></p>
+            <div class="pubs__links">
+              <a href="https://purl.stanford.edu/yf501km3807">Stanford Digital Repository</a>
+            </div>
+          </li>
+          <li>
+            <span class="pubs__year">2017</span>
+            <h3 class="pubs__title"><a href="pdf/expanding-crispr-toolbox-2017.pdf">The expanding CRISPR toolbox</a></h3>
+            <p class="pubs__authors"><span class="self">Tycko J</span><sup>*</sup>, Hess GT<sup>*</sup>, Jeng EE<sup>*</sup>, Dubreuil M<sup>*</sup>, Bassik MC. <span class="pubs__venue">Nature Methods</span>, poster</p>
+            <div class="pubs__links">
+              <a href="pdf/expanding-crispr-toolbox-2017.pdf">PDF</a>
+              <a href="https://www.nature.com/posters/crisprtoolbox">Nature</a>
+            </div>
+          </li>
+          <li>
+            <span class="pubs__year">2016</span>
+            <h3 class="pubs__title"><a href="https://doi.org/10.1016/S1525-0016(16)33126-4">Screening S. aureus CRISPR-Cas9 paired-guide RNAs for efficient targeted deletion in Duchenne muscular dystrophy</a></h3>
+            <p class="pubs__authors"><span class="self">Tycko J</span>, Huston N, Robinson-Hamm JN, Wilson C, Gersbach CA, Hsu PD, Bumcrot D. <span class="pubs__venue">Molecular Therapy</span>, meeting abstract</p>
+            <div class="pubs__links">
+              <a href="https://doi.org/10.1016/S1525-0016(16)33126-4">DOI</a>
+            </div>
+          </li>
+          <li>
+            <span class="pubs__year">2015</span>
+            <h3 class="pubs__title"><a href="pdf/exploring-genomes-2015.pdf">Exploring genomes: the need for an accessible map</a></h3>
+            <p class="pubs__authors"><span class="self">Tycko J</span>. <span class="pubs__venue">PennScience</span>, undergraduate research journal</p>
+            <div class="pubs__links">
+              <a href="pdf/exploring-genomes-2015.pdf">PDF</a>
+            </div>
+          </li>
+          <li>
+            <span class="pubs__year">2014</span>
+            <h3 class="pubs__title"><a href="pdf/site-specific-methylases-2014.pdf">Development of a single-plasmid system for screening site-specific DNA methylases</a></h3>
+            <p class="pubs__authors"><span class="self">Tycko J</span>, Cabrera D, Fields D, Kaptur B, Charawi M, Glantz S, Magaraci MS, Veerakumar A, Miller JS, Chow BY. <span class="pubs__venue">PennScience</span>, undergraduate research journal</p>
+            <div class="pubs__links">
+              <a href="pdf/site-specific-methylases-2014.pdf">PDF</a>
+            </div>
+          </li>
+          <li>
+            <span class="pubs__year">2013</span>
+            <h3 class="pubs__title"><a href="pdf/epigenetic-therapy-risks-2013.pdf">The potential of epigenetic therapy and the need for elucidation of risks</a></h3>
+            <p class="pubs__authors"><span class="self">Tycko J</span>, Fields D, Cabrera D, Charawi M, Kaptur B. <span class="pubs__venue">Penn Bioethics Journal</span>, undergraduate journal</p>
+            <div class="pubs__links">
+              <a href="pdf/epigenetic-therapy-risks-2013.pdf">PDF</a>
+            </div>
+          </li>
+        </ol>
+      </div>
+      </section>
     </div>
-  </section>
+  </div>
 
 </main>
 
@@ -628,6 +636,30 @@
   var c = [106,111,115,104,116,121,99,107,111,64,104,109,115,46,104,97,114,118,97,114,100,46,101,100,117];
   var e = String.fromCharCode.apply(null, c);
   a.setAttribute('href', 'mailto:' + e);
+})();
+</script>
+<script>
+// Sticky section index: mark the section currently in view.
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.secnav__link'));
+  if (!links.length) return;
+  var targets = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  function update(){
+    var vh = window.innerHeight || document.documentElement.clientHeight, best = 0;
+    for (var i = 0; i < targets.length; i++){
+      if (targets[i] && targets[i].getBoundingClientRect().top <= vh*0.35) best = i;
+    }
+    for (var j = 0; j < links.length; j++){
+      links[j].classList.toggle('is-current', j === best);
+      if (j === best) { links[j].setAttribute('aria-current','true'); }
+      else { links[j].removeAttribute('aria-current'); }
+    }
+  }
+  var ticking = false;
+  function onScroll(){ if(!ticking){ ticking = true; requestAnimationFrame(function(){ ticking = false; update(); }); } }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  update();
 })();
 </script>
 </body>
