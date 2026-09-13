@@ -6,6 +6,11 @@
 <title>Josh Tycko</title>
 <meta name="description" content="Josh Tycko, postdoctoral fellow at Harvard Medical School, measuring protein function at scale to model and manipulate cellular information processing.">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://joshtycko.github.io/">
+<meta property="og:title" content="Josh Tycko">
+<meta property="og:description" content="Josh Tycko, postdoctoral fellow at Harvard Medical School, measuring protein function to understand and engineer human gene regulation.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://joshtycko.github.io/">
 <link rel="preload" href="fonts/newsreader-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -46,15 +51,12 @@ a:hover{color:var(--accent-soft);}
 .nav__links a:hover,.nav__links a:focus-visible{color:var(--accent);}
 .nav__links a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent);}
 
-.hero{padding-block:clamp(3.5rem,9vw,7.5rem) clamp(3rem,7vw,5.5rem);}
-.hero__layout{display:grid;grid-template-columns:minmax(0,1fr);align-items:center;gap:3.5rem;}
+.hero{padding-block:clamp(3rem,7vw,5.5rem) clamp(2.5rem,5vw,4rem);}
+.hero__layout{display:grid;grid-template-columns:minmax(0,1fr);align-items:center;gap:2rem;}
 .eyebrow{font-family:var(--mono);font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);}
-.hero h1{font-family:var(--serif);font-weight:450;font-optical-sizing:auto;letter-spacing:-0.021em;font-size:var(--step-4);line-height:0.99;margin-top:1.25rem;max-width:20ch;text-wrap:balance;}
-.hero__lede{font-size:var(--step-1);line-height:1.5;color:var(--ink-soft);max-width:54ch;margin-top:1.75rem;text-wrap:pretty;}
-.hero__figure{margin:0;display:none;}
-@media (min-width:832px){
-  .hero__layout{grid-template-columns:minmax(0,1fr) auto;}
-  .hero__figure{display:block;}
+.hero h1{font-family:var(--serif);font-weight:450;font-optical-sizing:auto;letter-spacing:-0.021em;font-size:var(--step-4);line-height:0.99;margin-top:0.9rem;text-wrap:balance;}
+@media (min-width:720px){
+  .hero__layout{grid-template-columns:minmax(0,1fr) auto;gap:3.5rem;}
 }
 
 .section{padding-block:clamp(3rem,6vw,5rem);border-top:1px solid var(--rule);}
@@ -63,7 +65,8 @@ a:hover{color:var(--accent-soft);}
 .label{font-family:var(--mono);font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mute);}
 .section h2{font-family:var(--serif);font-weight:400;letter-spacing:-0.021em;line-height:1.06;font-size:var(--step-3);text-wrap:balance;}
 
-.portrait{width:clamp(7rem,12vw,9.5rem);aspect-ratio:1;border-radius:50%;object-fit:cover;filter:grayscale(1);border:1px solid var(--rule);margin-bottom:1.75rem;transition:filter .6s ease;}
+.portrait{width:clamp(7rem,12vw,9.5rem);aspect-ratio:1;border-radius:50%;object-fit:cover;filter:grayscale(1);border:1px solid var(--rule);transition:filter .6s ease;}
+.portrait--hero{width:clamp(8.5rem,17vw,12.5rem);}
 .portrait:hover{filter:grayscale(0);}
 .about p{max-width:var(--measure);text-wrap:pretty;}
 .about p + p{margin-top:1.1em;}
@@ -137,12 +140,9 @@ a:hover{color:var(--accent-soft);}
     <div class="hero__layout">
       <div>
         <p class="eyebrow rise d1">Postdoctoral Fellow · Harvard Medical School</p>
-        <h1 class="rise d2">How do cells process information from the surface to the nucleus?</h1>
-        <p class="hero__lede rise d3">I measure protein function to better understand and engineer the process from ligand recognition to chromatin regulation.</p>
+        <h1 class="rise d2">Josh Tycko</h1>
       </div>
-      <figure class="hero__figure rise d4" aria-hidden="true">
-        <canvas id="secretome" width="360" height="400" style="width:360px;height:400px;display:block;"></canvas>
-      </figure>
+      <img class="portrait portrait--hero rise d3" src="img/portrait.jpg" alt="Josh Tycko" width="600" height="600">
     </div>
   </header>
 
@@ -150,9 +150,9 @@ a:hover{color:var(--accent-soft);}
     <div class="shell sec-grid">
       <p class="label reveal">About</p>
       <div class="about reveal">
-        <img class="portrait" src="img/portrait.jpg" alt="Josh Tycko" width="600" height="600">
-        <p>I'm a postdoctoral fellow at Harvard Medical School, in the labs of Michael Greenberg and Martin Pollak. On an NIH F99/K00 fellowship, I develop pooled methods to read out the functions of secreted proteins at scale.</p>
+        <p>I'm a postdoctoral fellow at Harvard Medical School, in Michael Greenberg's lab in the Department of Neurobiology and Martin Pollak's lab at Beth Israel Deaconess Medical Center. On an NIH F99/K00 fellowship, I develop pooled methods to read out the functions of secreted proteins at scale.</p>
         <p>I earned my Ph.D. in Genetics at Stanford with Michael Bassik and Lacra Bintu, on an NSF Graduate Research Fellowship. There I built pooled screens that measure the functions of thousands of human protein domains, mapping transcriptional effectors and engineering compact tools to switch genes on and off.</p>
+        <p>At Stanford I was also a teaching assistant for a course on the science and bioethics of CRISPR, an instructor for a hands-on cell engineering lab, and a mentor to the iGEM team. As a BioFutures Fellow and co-leader of the Genetics Advocacy Committee, I worked with other trainees to study and improve graduate STEM training.</p>
         <p>I also helped co-found Stylus&nbsp;Medicine, which is developing recombinase-based in&nbsp;vivo genetic medicines for cancer.</p>
       </div>
     </div>
@@ -269,108 +269,6 @@ a:hover{color:var(--accent-soft);}
     check(); setTimeout(check, 400);
   }
 
-  // Secretome hero: ligands drift in from outside, dock on receptors, and
-  // occasionally fire a signal inward to the nucleus. Nothing crosses the membrane.
-  var cv = document.getElementById('secretome');
-  if (!cv || !cv.getContext) return;
-  var W = 360, H = 400, dpr = Math.min(window.devicePixelRatio || 1, 2);
-  cv.width = W*dpr; cv.height = H*dpr;
-  var ctx = cv.getContext('2d'); ctx.scale(dpr, dpr);
-  var css = getComputedStyle(document.body);
-  var INK = (css.getPropertyValue('--ink').trim()) || '#1b1a17';
-  var ACC = (css.getPropertyValue('--accent').trim()) || '#a4610f';
-  function hexA(hex, a){ hex = (hex||'').replace('#',''); if(hex.length===3) hex = hex.split('').map(function(c){return c+c;}).join(''); var n = parseInt(hex||'000000',16); return 'rgba('+((n>>16)&255)+','+((n>>8)&255)+','+(n&255)+','+a+')'; }
-  var rand = function(a,b){ return a + Math.random()*(b-a); };
-  var ease = function(p){ return p<0.5 ? 2*p*p : 1-Math.pow(-2*p+2,2)/2; };
-
-  var nucleus = { x:W*0.82, y:H*0.5, r:44, glow:0 };
-  function membX(y,t){ return W*0.58 + Math.sin(y/H*Math.PI*1.7 + t*0.0006)*9; }
-  var RN = 7, receptors = [];
-  for (var i=0;i<RN;i++) receptors.push({ y:H*0.13 + (H*0.74)*(i/(RN-1)), occ:false, res:false });
-
-  function mkLig(){ return { x:rand(-25,W*0.12), y:rand(H*0.05,H*0.95), vx:rand(0.2,0.7), vy:rand(-0.3,0.3), state:'free', tgt:null, bt:0, dur:rand(2600,5200), fired:false, wob:Math.random()*6.28, a:0 }; }
-  var N = 46, ligs = [];
-  for (var k=0;k<N;k++){ var l = mkLig(); l.x = rand(-60,W*0.42); l.a = 1; ligs.push(l); }
-  var signals = [];
-  function freeReceptor(y){ var best=null, bd=1e9; receptors.forEach(function(r){ if(!r.res){ var d=Math.abs(r.y-y); if(d<bd){bd=d;best=r;} } }); return best; }
-
-  var last = performance.now(), raf;
-  function step(now){
-    var dt = Math.min(now-last, 50); last = now;
-    ctx.clearRect(0,0,W,H);
-
-    var fade = ctx.createLinearGradient(0,0,0,H);
-    fade.addColorStop(0, hexA(INK,0)); fade.addColorStop(0.16, hexA(INK,1));
-    fade.addColorStop(0.84, hexA(INK,1)); fade.addColorStop(1, hexA(INK,0));
-
-    var cellFill = ctx.createLinearGradient(W*0.55,0,W,0);
-    cellFill.addColorStop(0, hexA(INK,0.06)); cellFill.addColorStop(1, hexA(INK,0));
-    ctx.beginPath(); ctx.moveTo(W,0);
-    for (var y=0;y<=H;y+=8) ctx.lineTo(membX(y,now),y);
-    ctx.lineTo(W,H); ctx.closePath(); ctx.fillStyle = cellFill; ctx.fill();
-
-    ctx.save(); ctx.globalAlpha = 0.42;
-    ctx.beginPath(); ctx.moveTo(membX(0,now),0);
-    for (var y2=0;y2<=H;y2+=6) ctx.lineTo(membX(y2,now),y2);
-    ctx.strokeStyle = fade; ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
-    receptors.forEach(function(r){ var mx=membX(r.y,now); ctx.beginPath(); ctx.arc(mx,r.y,3.2,0,6.29); ctx.strokeStyle = r.occ?hexA(ACC,0.7):hexA(INK,0.42); ctx.lineWidth=1.4; ctx.stroke(); });
-
-    if (nucleus.glow>0.01){ ctx.beginPath(); ctx.arc(nucleus.x,nucleus.y,nucleus.r+8+nucleus.glow*12,0,6.29); ctx.fillStyle=hexA(ACC,0.11*nucleus.glow); ctx.fill(); }
-    ctx.beginPath(); ctx.arc(nucleus.x,nucleus.y,nucleus.r,0,6.29); ctx.fillStyle=hexA(INK,0.06); ctx.fill();
-    ctx.strokeStyle = nucleus.glow>0.05?hexA(ACC,0.5+0.5*nucleus.glow):hexA(INK,0.4); ctx.lineWidth=1.5; ctx.stroke();
-    nucleus.glow *= 0.95;
-
-    for (var s2=signals.length-1;s2>=0;s2--){
-      var s = signals[s2]; s.t += dt;
-      var p = Math.min(s.t/s.dur,1), e = ease(p);
-      var cx=(s.x+nucleus.x)/2, cy=(s.y+nucleus.y)/2-40;
-      var bx=(1-e)*(1-e)*s.x+2*(1-e)*e*cx+e*e*nucleus.x;
-      var by=(1-e)*(1-e)*s.y+2*(1-e)*e*cy+e*e*nucleus.y;
-      var pe=ease(Math.max(p-0.12,0));
-      var tx=(1-pe)*(1-pe)*s.x+2*(1-pe)*pe*cx+pe*pe*nucleus.x;
-      var ty=(1-pe)*(1-pe)*s.y+2*(1-pe)*pe*cy+pe*pe*nucleus.y;
-      ctx.beginPath(); ctx.moveTo(tx,ty); ctx.lineTo(bx,by); ctx.strokeStyle=hexA(ACC,0.5); ctx.lineWidth=2; ctx.lineCap='round'; ctx.stroke();
-      ctx.beginPath(); ctx.arc(bx,by,3,0,6.29); ctx.fillStyle=hexA(ACC,0.95); ctx.shadowColor=hexA(ACC,0.8); ctx.shadowBlur=8; ctx.fill(); ctx.shadowBlur=0;
-      if (p>=1){ nucleus.glow=1; signals.splice(s2,1); }
-    }
-
-    ligs.forEach(function(l){
-      l.a = Math.min(l.a+0.02,1);
-      if (l.state==='free'){
-        if (!l.tgt && l.x>W*0.05){ var r=freeReceptor(l.y); if(r){ r.res=true; l.tgt=r; } }
-        if (l.tgt){
-          var mx=membX(l.tgt.y,now), dx=mx-l.x, dy=l.tgt.y-l.y, d=Math.hypot(dx,dy)||1;
-          l.vx += ((dx/d*1.1)-l.vx)*0.05; l.vy += ((dy/d*1.1)-l.vy)*0.05;
-          if (d<5){ l.state='bound'; l.tgt.occ=true; l.bt=now; l.vx=0; l.vy=0; }
-        } else { l.wob += 0.05; l.vx += (0.5-l.vx)*0.02; l.vy += Math.sin(l.wob)*0.06; }
-        l.x += l.vx; l.y += l.vy;
-      } else if (l.state==='bound'){
-        var mxb=membX(l.tgt.y,now);
-        l.x = mxb + Math.sin(now*0.005+l.wob)*0.8;
-        l.y = l.tgt.y + Math.cos(now*0.005+l.wob)*0.8;
-        if (!l.fired && now-l.bt>l.dur*0.35){ l.fired=true; signals.push({x:mxb,y:l.tgt.y,t:0,dur:900}); }
-        if (now-l.bt>l.dur){ l.tgt.occ=false; l.tgt.res=false; l.state='leaving'; l.tgt=null; l.vx=rand(-1.4,-0.6); l.vy=rand(-0.5,0.5); }
-      } else {
-        l.x += l.vx; l.y += l.vy; l.a -= 0.012;
-        if (l.a<=0){ Object.assign(l, mkLig()); }
-      }
-      if (l.state!=='bound'){ var bar=membX(l.y,now)-5; if (l.x>bar){ l.x=bar; if(l.vx>0) l.vx=-Math.abs(l.vx)*0.6-0.15; } }
-      if (l.state==='bound'){
-        ctx.beginPath(); ctx.arc(l.x,l.y,6,0,6.29); ctx.fillStyle=hexA(ACC,0.14); ctx.fill();
-        ctx.beginPath(); ctx.arc(l.x,l.y,3.4,0,6.29); ctx.fillStyle=hexA(ACC,0.95); ctx.fill();
-      } else {
-        ctx.beginPath(); ctx.arc(l.x,l.y,2.8,0,6.29); ctx.fillStyle=hexA(INK,0.4*l.a); ctx.fill();
-      }
-    });
-
-    raf = requestAnimationFrame(step);
-  }
-  if (window.matchMedia('(prefers-reduced-motion:reduce)').matches){
-    receptors.forEach(function(r,i){ if(i%2===0){ r.occ=true; r.res=true; } });
-    step(performance.now()); if (raf) cancelAnimationFrame(raf);
-  } else {
-    raf = requestAnimationFrame(step);
-  }
 })();
 </script>
 <script>
