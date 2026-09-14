@@ -22,10 +22,21 @@ works, but the local server matches how GitHub Pages serves them.)
 |---|---|
 | Name, role line, about text | `index.html` |
 | Research interests | `index.html` (the `.interests` list) |
-| Add a paper | `publications.html` — copy an existing `<li>` in the "All work" list, edit its parts, keep newest first. Add it to the "Selected" section too if it belongs there, and mirror the top few in `index.html`. |
+| Add a paper | `publications.html`, inside the section with `id="publications"`. Copy an existing `<li>`, edit its parts, keep newest first, and renumber the countdown so it runs N down to 1. Give it `data-selected` only if it belongs in the Selected five, and if you do, mirror it into `index.html`, which shows that same five. |
 | Selected papers / press links | `publications.html` — the "Selected" section at top; the small `Feature` / `News & Views` / `preLights` links belong only on papers that actually have coverage (link the real URL) |
 | Headshot | Replace `img/portrait.jpg` with a square photo (≥600×600). The CSS renders it as a grayscale circle. |
 | Colors, spacing, type | `index.html` has its own inlined `<style>`; `publications.html` and `404.html` use `css/style.css`. Both define the same custom properties in `:root`, so a palette change has to be made in both. |
+
+Two conventions worth knowing before editing `publications.html`:
+
+- The page is three sections (`id="publications"`, `id="patents"`, `id="other"`)
+  inside one `.pubpage` grid, with a sticky index in the left rail that tracks
+  which one you are reading. Adding a section means adding a `.secnav__link` too.
+- A paper whose co-first authors are not in contribution order carries a
+  `.pubs__note` line under its author list. Take the wording from Josh's CV, which
+  distinguishes "listed alphabetically" from "can be reported in any order". Check
+  the CV **PDF**: its full numbered list carries these annotations, while the
+  Selected Publications section in the .docx is abridged and omits most of them.
 
 The favicon (`img/favicon.svg`) is a "JT" monogram. Change the initials in the
 `<text>` element if needed. The hero is deliberately plain: the role line, the
@@ -37,40 +48,25 @@ This folder is the `joshtycko.github.io` repository. GitHub Pages publishes
 `main` automatically — **`git push` is the whole deploy**. The site serves at
 <https://joshtycko.github.io/>.
 
-### Moving `joshtycko.com` here (off Owlstown)
+### `joshtycko.com` (migrated off Owlstown 2026-09-13)
 
-The DNS for `joshtycko.com` is at **GoDaddy** (nameservers `ns73/ns74.domaincontrol.com`).
-As of 2026-09-13 the apex is a GoDaddy forward and `www` is a `CNAME` to `hosting.owlstown.com`.
-**Do the DNS first and cancel Owlstown last.** Cancelling while DNS still points there leaves
-`joshtycko.com` serving a dead page.
+The site serves at <https://joshtycko.com>. `www` redirects to the apex and
+`joshtycko.github.io` redirects to the custom domain. DNS is at **GoDaddy**
+(nameservers `ns73/ns74.domaincontrol.com`): four apex `A` records to
+`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, and a
+`www` `CNAME` to `joshtycko.github.io`. The `MX` records point at
+`secureserver.net` and carry Josh's mail, so leave them alone.
 
-**Step 1 (needs your GoDaddy login).** In GoDaddy → My Products → `joshtycko.com` → DNS:
+The `CNAME` file in this repo is what binds the domain to Pages. Do not delete it.
+If the domain ever needs re-setting, configure DNS first, then
+`PUT /repos/JoshTycko/joshtycko.github.io/pages` with `{"cname": "joshtycko.com"}`,
+wait for the certificate, then a second call with `{"https_enforced": true}`. The
+two cannot be set in one request, since HTTPS enforcement needs the certificate to
+exist. Expect one failed Pages build at the moment the domain is set, from the
+auto-commit that writes `CNAME`; the next build succeeds. HTTPS enforcement can
+take up to an hour to show up at the edge after the API reports it.
 
-1. Turn **off** domain forwarding if the apex is forwarded (Domain Settings → Forwarding → delete).
-2. Delete the existing apex `A` records, then add four `A` records, host `@`:
-   `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   (optionally the matching `AAAA` records `2606:50c0:8000::153` through `8003::153`).
-3. Edit the `www` `CNAME`: change its value from `hosting.owlstown.com` to `joshtycko.github.io`.
-4. Leave the `MX` records alone. They point at `secureserver.net` and carry your mail.
-
-Confirm it took with `dig +short joshtycko.com` (expect the four `185.199.*` addresses) and
-`dig +short www.joshtycko.com` (expect `joshtycko.github.io`). Propagation is usually minutes.
-
-**Step 2 (Claude can do this once step 1 resolves).**
-
-1. Set the Pages custom domain: `PUT /repos/JoshTycko/joshtycko.github.io/pages` with
-   `{"cname": "joshtycko.com", "https_enforced": true}`, which also writes the `CNAME` file.
-2. Repoint `rel="canonical"` and the `og:url` tags in `index.html` and `publications.html`
-   from `https://joshtycko.github.io/` to `https://joshtycko.com/`.
-3. Wait for the certificate, then verify `https://joshtycko.com` and the
-   `joshtycko.github.io` → `joshtycko.com` redirect.
-
-Do **not** add a `CNAME` file before DNS resolves to GitHub. GitHub immediately starts
-redirecting `joshtycko.github.io` to the custom domain, which would point visitors at a
-domain still serving Owlstown.
-
-**Step 3.** Once `https://joshtycko.com` serves this site, cancel the Owlstown subscription.
-A snapshot of the Owlstown page and an audit of what was ported are in
+A snapshot of the old Owlstown page and an audit of what was ported from it are in
 `.claude/research/owlstown-archive/` (gitignored, local only).
 
 `404.html` is picked up automatically by GitHub Pages. It uses absolute asset
